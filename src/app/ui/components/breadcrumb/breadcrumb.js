@@ -29,18 +29,18 @@ export default function Breadcrumb({
           let itemClasses =
             paths === href ? `${listClasses} ${activeClasses}` : listClasses;
 
-          // Reemplazar guiones por espacios
-          let itemLink = link.replace(/-/g, " ");
+          let decodedLink = decodeURIComponent(link);
 
-          // Capitalizar el texto si es necesario
-          itemLink = capitalizeLinks
-            ? itemLink[0].toUpperCase() + itemLink.slice(1)
-            : itemLink;
+          decodedLink = decodedLink.replace(/-/g, " ");
+
+          decodedLink = capitalizeLinks
+            ? decodedLink[0].toUpperCase() + decodedLink.slice(1)
+            : decodedLink;
 
           return (
             <React.Fragment key={index}>
               <li className={itemClasses}>
-                <Link href={href}>{itemLink}</Link>
+                <Link href={href}>{decodedLink}</Link>
               </li>
               {pathNames.length !== index + 1 && separator}
             </React.Fragment>
