@@ -11,9 +11,9 @@ import "swiper/css/pagination";
 
 export default function SectionGalleryProjects({ sectionName, dataProjects }) {
   return (
-    <section>
+    <section className="py-5">
       <Container>
-        <Text_head_2 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
+        <Text_head_2 className="mb-5 md:mb-0 font-bold text-creajovem-blue-400 dark:text-creajovem-green-500">
           {sectionName}
         </Text_head_2>
 
@@ -25,11 +25,11 @@ export default function SectionGalleryProjects({ sectionName, dataProjects }) {
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
           }}
-          className="w-full md:-translate-y-10"
+          className="w-full lg:-translate-y-10"
         >
           {dataProjects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[340px] flex items-center justify-center">
+              <div className="h-[350px] md:h-[340px] flex md:items-center justify-center">
                 <CardProject
                   title={project.name}
                   category={project.category}

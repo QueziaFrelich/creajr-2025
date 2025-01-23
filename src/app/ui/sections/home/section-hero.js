@@ -7,9 +7,26 @@ import Container from "../../components/container/container";
 import "swiper/css";
 
 const slides = [
-  { title: "Slide", src: "/banners/banner-1.png" },
-  { title: "Slide", src: "/banners/banner-2.png" },
-  { title: "Slide", src: "/banners/banner-3.png" },
+  {
+    title: "Slide",
+    src: "/banners/banner-1.png",
+    responsive: "/banners/banner-1-responsive.png",
+  },
+  {
+    title: "Slide",
+    src: "/banners/banner-2.png",
+    responsive: "/banners/banner-2-responsive.png",
+  },
+  {
+    title: "Slide",
+    src: "/banners/banner-3.png",
+    responsive: "/banners/banner-3-responsive.png",
+  },
+  {
+    title: "Slide",
+    src: "/banners/banner-4.png",
+    responsive: "/banners/banner-4-responsive.png",
+  },
 ];
 
 export default function SectionHero() {
@@ -18,7 +35,7 @@ export default function SectionHero() {
 
   return (
     <>
-      <div className="relative">
+      <div className="mt-5 relative max-w-screen-xl mx-auto">
         {/* Slider */}
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -26,19 +43,29 @@ export default function SectionHero() {
           slidesPerView={1.27}
           centeredSlides={true}
           initialSlide={1}
-          spaceBetween={50}
+          spaceBetween={30}
+          className="rounded-xl"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="h-auto w-full rounded-xl overflow-hidden">
-                <img src={slide.src} alt={slide.title} />
+                <img
+                  src={slide.src}
+                  alt={slide.title}
+                  className="hidden md:block"
+                />
+                <img
+                  src={slide.responsive}
+                  alt={slide.title}
+                  className="block md:hidden"
+                />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Controlls slider */}
-        <Container className={"py-5"}>
+        <Container>
           <div className="flex justify-between items-start py-5">
             {/* Custom Pagination */}
             <div className="flex justify-start items-center gap-3 mt-4 w-full">
@@ -47,8 +74,8 @@ export default function SectionHero() {
                   key={index}
                   className={`w-[10%] h-1 ${
                     index === activeIndex
-                      ? "bg-creajovem-blue-1000 dark:bg-white"
-                      : "bg-creajovem-blue-1000/20 dark:bg-white/20"
+                      ? "bg-creajovem-blue-400 dark:bg-white"
+                      : "bg-creajovem-blue-500/20 dark:bg-white/20"
                   }`}
                   onClick={() => swiperRef.current?.slideTo(index)}
                 />
@@ -58,16 +85,16 @@ export default function SectionHero() {
             {/* Navigation Buttons */}
             <div className="px-4 flex gap-5 items-center">
               <button
-                className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperRef.current?.slidePrev()}
               >
-                <ChevronLeftIcon className="size-5" />
+                <ChevronLeftIcon className="size-4" />
               </button>
               <button
-                className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperRef.current?.slideNext()}
               >
-                <ChevronRightIcon className="size-5" />
+                <ChevronRightIcon className="size-4" />
               </button>
             </div>
           </div>

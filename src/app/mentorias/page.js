@@ -9,7 +9,9 @@ import SectionMentores from "../ui/sections/home/section-mentores";
 
 export default function layoutMentoria({}) {
   return (
-    <Container className={"space-y-20 py-20"}>
+    <Container
+      className={"space-y-20 py-20 text-creajovem-blue-500 dark:text-white"}
+    >
       {/* About */}
       <section className="space-y-5">
         <Breadcrumb

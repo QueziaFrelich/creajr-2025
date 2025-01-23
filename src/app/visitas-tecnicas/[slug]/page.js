@@ -16,17 +16,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "react-photo-view/dist/react-photo-view.css";
 import { useParams } from "next/navigation";
 import Text_body_sm from "@/app/ui/components/text/text-body-sm";
 import Text_head_3 from "@/app/ui/components/text/text-head-3";
 import Breadcrumb from "@/app/ui/components/breadcrumb/breadcrumb";
 import { useRef } from "react";
-import Icon_instagram from "@/app/ui/icons/footer/Instagram.js";
-import Icon_linkedin from "@/app/ui/icons/footer/LinkedIn";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import Link from "next/link";
-
-const gallery = ["A", "B", "C", "D", "E", "F"];
-const testimonial = ["", "", "", "", "", "", ""];
 
 export default function LayoutVisitas({}) {
   const swiperGalleryRef = useRef(null);
@@ -43,7 +40,9 @@ export default function LayoutVisitas({}) {
   });
 
   return (
-    <Container className={"space-y-20 py-20"}>
+    <Container
+      className={"space-y-20 py-20 text-creajovem-blue-500 dark:text-white"}
+    >
       {/* About */}
       <section className="space-y-5">
         <Breadcrumb
@@ -91,41 +90,44 @@ export default function LayoutVisitas({}) {
           {/* Navigation Buttons */}
           <div className="px-4 flex gap-5 items-center">
             <button
-              className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={() => swiperGalleryRef.current?.slidePrev()}
             >
               <ChevronLeftIcon className="size-5" />
             </button>
             <button
-              className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={() => swiperGalleryRef.current?.slideNext()}
             >
               <ChevronRightIcon className="size-5" />
             </button>
           </div>
         </div>
-
-        <Swiper
-          onSwiper={(swiper) => (swiperGalleryRef.current = swiper)}
-          spaceBetween={20}
-          breakpoints={{
-            360: { slidesPerView: 1.2 },
-            640: { slidesPerView: 1.5 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-          }}
-          className="w-full"
-        >
-          {selectProject.gallery.map((picture, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={picture}
-                alt={`Fotografia do projeto ${selectProject.tags.project}`}
-                className="w-full"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <PhotoProvider>
+          <Swiper
+            onSwiper={(swiper) => (swiperGalleryRef.current = swiper)}
+            spaceBetween={20}
+            breakpoints={{
+              360: { slidesPerView: 1.2 },
+              640: { slidesPerView: 1.5 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="w-full"
+          >
+            {selectProject.gallery.map((picture, index) => (
+              <SwiperSlide key={index}>
+                <PhotoView src={picture}>
+                  <img
+                    src={picture}
+                    alt={`Fotografia do projeto ${selectProject.tags.project}`}
+                    className="w-full cursor-pointer"
+                  />
+                </PhotoView>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </PhotoProvider>
       </section>
 
       {/* Testimonial section */}
@@ -138,16 +140,16 @@ export default function LayoutVisitas({}) {
           {/* Navigation Buttons */}
           <div className="px-4 flex gap-5 items-center">
             <button
-              className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={() => swiperTestimonialRef.current?.slidePrev()}
             >
-              <ChevronLeftIcon className="size-5" />
+              <ChevronLeftIcon className="size-4" />
             </button>
             <button
-              className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-creajovem-blue-1000 dark:border-white text-creajovem-blue-1000 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={() => swiperTestimonialRef.current?.slideNext()}
             >
-              <ChevronRightIcon className="size-5" />
+              <ChevronRightIcon className="size-4" />
             </button>
           </div>
         </div>

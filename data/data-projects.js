@@ -88,35 +88,85 @@ Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conh
           {
             image: "https://placehold.co/600x400",
             title:
-              "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
+              "Jared - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
             description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: { project: "", date: "10/03/2024", hour: "", region: "" },
-            href: "#",
-            gallery: [],
-            testimonials: [],
+            tags: {
+              project: "Projeto 1",
+              date: "10/03/2024",
+              hour: "17:00h",
+              region: "Regional Araranguá",
+            },
+            href: "/circuito-de-palestras",
+            gallery: [
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+            ],
+            testimonials: [
+              {
+                name: "Pessoa 1 - Buuc Analítica e Design",
+                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
+              },
+              {
+                name: "Pessoa 2 - Buuc Analítica e Design",
+                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
+              },
+            ],
             company: {
-              name: "",
-              logo: "",
-              description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
-              contact: { address: "", website: "" },
+              name: "Nome da Empresa",
+              logo: "https://placehold.co/600x400",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
+              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
+              contact: {
+                address: "Rua 123, 456",
+                website: "https://www.google.com",
+              },
             },
           },
           {
             image: "https://placehold.co/600x400",
             title:
-              "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
+              "SOON 2 - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
             description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: { project: "", date: "10/03/2025", hour: "", region: "" },
-            href: "#",
-            gallery: [],
-            testimonials: [],
+            tags: {
+              project: "Projeto 2",
+              date: "10/03/2025",
+              hour: "06:00h",
+              region: "Regional Sao Paulo",
+            },
+            href: "/circuito-de-palestras",
+            gallery: [
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+              "https://placehold.co/600x400",
+            ],
+            testimonials: [
+              {
+                name: "Pessoa 1 - Buuc Analítica e Design",
+                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
+              },
+              {
+                name: "Pessoa 2 - Buuc Analítica e Design",
+                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
+              },
+            ],
             company: {
-              name: "",
-              logo: "",
-              description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
-              contact: { address: "", website: "" },
+              name: "Nome da Empresa 2",
+              logo: "https://placehold.co/600x400",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
+              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
+              contact: {
+                address: "Rua 123, 456",
+                website: "https://www.google.com",
+              },
             },
           },
         ],
@@ -293,7 +343,7 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     summary:
       "Explore o Sistema Confea/Crea com um guia prático que explica suas responsabilidades e como você, jovem profissional, pode participar e influenciar positivamente sua profissão!",
     button: {
-      type: "modal",
+      type: null,
       text: "Ver detalhes",
       href: "#",
     },

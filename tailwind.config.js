@@ -3,6 +3,7 @@ const colors = require("tailwindcss/colors");
 const { nextui } = require("@nextui-org/react");
 
 module.exports = {
+  darkMode: "selector",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -32,6 +33,7 @@ module.exports = {
       },
       "creajovem-blue": {
         100: "#E5F2FF",
+        400: "#202AE9",
         500: "#070FAD",
         600: "#103357",
         700: "#02076B",

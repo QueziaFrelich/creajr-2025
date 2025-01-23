@@ -15,27 +15,60 @@ import Icon_person from "../../icons/footer/person";
 import Text_body_base from "../text/text-body-base";
 
 export default function Footer() {
-  const pathName = usePathname();
   return (
     <>
       {/* Section Contact */}
-      <section className="py-20 md:py-20 min-h-96 flex flex-col justify-center bg-radial-gradient">
+      <section
+        className="py-20 border-t border-creajovem-green-500  min-h-96 flex flex-col justify-center bg-radial-gradient bg-creajovem-blue-500 dark:bg-creajovem-blue-1000"
+        id="contato"
+      >
         <Container
           className={
-            "flex flex-col md:flex-row justify-between gap-16 text-white border-t py-20"
+            "flex flex-col md:flex-row justify-between gap-16 text-white"
           }
         >
           {/* Section 1 */}
           <div className="space-y-5">
-            <div className="flex items-center gap-5">
-              <Link href={"/"} target="_blank" className="pr-5">
+            <div className="flex flex-col md:flex-row md:items-center gap-5 w-72 md:w-full">
+              <Link
+                href={"https://portal.crea-sc.org.br/ "}
+                target="_blank"
+                className="md:pr-5"
+              >
                 <img
                   src="/brand/crea_logo_white.png"
                   alt="Logo Crea"
                   className="w-full max-w-60"
                 />
               </Link>
-              <Link href={"/"} className="pl-5 border-l-2">
+              <div className="flex md:hidden gap-5 items-center">
+                <Icon_instagram
+                  href={"https://www.instagram.com/creascoficial/"}
+                  setClass={"transition-all hover:text-creajovem-green-500"}
+                />
+                <Icon_linkedin
+                  href={
+                    "https://www.linkedin.com/company/crea---sc/?originalSubdomain=br"
+                  }
+                  setClass={"transition-all hover:text-creajovem-green-500"}
+                />
+                <Icon_youtube
+                  href={"https://www.youtube.com/@creasc"}
+                  setClass={"transition-all hover:text-creajovem-green-500"}
+                />
+                <Icon_facebook
+                  href={"https://www.facebook.com/creasc"}
+                  setClass={"transition-all hover:text-creajovem-green-500"}
+                />
+                <Icon_twitter
+                  href={"https://twitter.com/creasc"}
+                  setClass={"transition-all hover:text-creajovem-green-500"}
+                />
+              </div>
+              <Link
+                href={"/"}
+                className="pt-5 md:pt-0 md:pl-5 border-t-2 md:border-t-0 md:border-l-2"
+              >
                 <img
                   src="/brand/creajovem_logo.png"
                   alt="Logo Crea Jovem"
@@ -44,7 +77,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="flex gap-5 items-center">
+            <div className="hidden md:flex gap-5 items-center">
               <Icon_instagram
                 href={"https://www.instagram.com/creascoficial/"}
                 setClass={"transition-all hover:text-creajovem-green-500"}
@@ -88,7 +121,7 @@ export default function Footer() {
               <Link
                 href={"https://br.linkedin.com/in/rodrigoesp%C3%ADndola"}
                 target="_blank"
-                className="flex items-center gap-2 font-light text-sm"
+                className="flex items-center gap-2 font-light text-sm hover:text-creajovem-green-500"
               >
                 <svg
                   width="16"
@@ -107,9 +140,25 @@ export default function Footer() {
                 </Text_body_base>
               </Link>
 
-              <div className="flex items-center gap-2 font-light text-sm">
-                <Icon_phone href={"#"} />
-                <Text_body_base>(48) 99159-4791</Text_body_base>
+              <div>
+                <Link
+                  href={"https://wa.me/5548991594791"}
+                  className="hover:text-creajovem-green-500 transition-all flex items-center gap-2 font-light text-sm"
+                >
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.0885 11.3795L11.408 9.73031L11.3979 9.72562C11.2068 9.6439 10.9984 9.61111 10.7914 9.6302C10.5845 9.6493 10.3856 9.71969 10.2127 9.835C10.1923 9.84844 10.1728 9.86305 10.1541 9.87875L8.25255 11.4998C7.04786 10.9147 5.80411 9.68031 5.21895 8.49125L6.84239 6.56078C6.85802 6.54125 6.87286 6.52172 6.88692 6.50062C6.99976 6.3282 7.06821 6.13056 7.08621 5.92529C7.1042 5.72002 7.07117 5.51348 6.99005 5.32406V5.31469L5.33614 1.62797C5.22891 1.38052 5.04452 1.17438 4.8105 1.04034C4.57649 0.906297 4.3054 0.85153 4.0377 0.884217C2.97909 1.02352 2.00737 1.54341 1.30406 2.34679C0.600739 3.15017 0.213913 4.1821 0.215827 5.24984C0.215827 11.453 5.2627 16.4998 11.4658 16.4998C12.5336 16.5018 13.5655 16.1149 14.3689 15.4116C15.1723 14.7083 15.6922 13.7366 15.8315 12.678C15.8642 12.4104 15.8095 12.1393 15.6756 11.9053C15.5418 11.6713 15.3358 11.4869 15.0885 11.3795ZM11.4658 15.2498C8.81455 15.2469 6.27269 14.1924 4.39796 12.3177C2.52322 10.443 1.46872 7.90112 1.46583 5.24984C1.46289 4.48694 1.73774 3.74906 2.23906 3.17399C2.74038 2.59892 3.43388 2.22599 4.19005 2.12484C4.18974 2.12796 4.18974 2.1311 4.19005 2.13422L5.83067 5.80609L4.21583 7.7389C4.19944 7.75776 4.18455 7.77788 4.1713 7.79906C4.05373 7.97947 3.98476 8.18718 3.97107 8.40208C3.95739 8.61697 3.99944 8.83176 4.09317 9.02562C4.80098 10.4733 6.25958 11.9209 7.72286 12.628C7.91814 12.7208 8.13418 12.7614 8.34985 12.7458C8.56552 12.7302 8.77345 12.6589 8.95333 12.5389C8.97339 12.5254 8.99269 12.5108 9.01114 12.4952L10.9104 10.8748L14.5822 12.5194C14.5822 12.5194 14.5885 12.5194 14.5908 12.5194C14.4909 13.2766 14.1185 13.9715 13.5434 14.4741C12.9682 14.9766 12.2296 15.2524 11.4658 15.2498Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <Text_body_base>(48) 99159-4791</Text_body_base>
+                </Link>
               </div>
               <div className="flex items-center gap-2 font-light text-sm">
                 <Icon_email href={"mailto:creasummit@crea-sc.org.br"} />

@@ -7,6 +7,8 @@ import {
   ArrowRightIcon,
   ChevronRightIcon,
   ArrowTopRightOnSquareIcon,
+  SunIcon,
+  MoonIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Container from "../container/container";
@@ -24,9 +26,19 @@ import Text_head_2 from "../text/text-head-2";
 
 const navigation = [
   { name: "Home", href: "/", blank: false, icon: false },
-  { name: "Contato", href: "/#", blank: false, icon: false },
-  { name: "Benefícios CREA-SC", href: "#", blank: true, icon: true },
-  { name: "Capacitação", href: "/#", blank: true, icon: true },
+  { name: "Contato", href: "/#contato", blank: false, icon: false },
+  {
+    name: "Benefícios CREA-SC",
+    href: "https://inovacao.crea-sc.org.br/beneficios-crea-sc  ",
+    blank: true,
+    icon: true,
+  },
+  {
+    name: "Capacitação",
+    href: "https://unicrea.crea-sc.org.br/cursos",
+    blank: true,
+    icon: true,
+  },
 ];
 
 const StepsForInscription = [
@@ -40,8 +52,32 @@ const StepsForInscription = [
 export default function Header() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const pathName = usePathname();
+
+  // Cargar preferencia de tema
+  useEffect(() => {
+    const userTheme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (userTheme === "dark" || (!userTheme && systemTheme)) {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const handleThemeChange = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,38 +103,65 @@ export default function Header() {
     <>
       <header
         className={`w-full top-0 z-50 transition-all duration-300 ${
-          isSticky && "bg-creajovem-blue-1000/50 backdrop-blur-lg fixed"
+          isSticky &&
+          "bg-white/60 dark:bg-creajovem-blue-1000/50 backdrop-blur-lg fixed"
         }`}
       >
         <Container>
           <div className="flex items-center justify-between py-5">
             {/* Logo */}
             <Link href="/" className="text-lg font-bold">
-              <img src="/brand/logo.svg" alt="Logotipo Crea Jovem" />
+              {isDark ? (
+                <img
+                  src="/brand/creajovem_logo_dark.png"
+                  alt="Logotipo Crea Jovem"
+                  className="max-w-52"
+                />
+              ) : (
+                <img
+                  src="/brand/creajovem_logo_light.png"
+                  alt="Logotipo Crea Jovem"
+                  className="max-w-52"
+                />
+              )}
             </Link>
 
-            {/* Menu Toggle for Mobile */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="xl:hidden p-2"
-            >
-              {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
-              )}
-            </button>
+            <div className="flex xl:hidden items-center gap-5">
+              {/* Menu Toggle for Mobile */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="xl:hidden p-2"
+              >
+                {isMenuOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
+
+              {/* Swich dark */}
+              <button
+                onClick={handleThemeChange}
+                className="block xl:hidden py-3 px-3 rounded bg-creajovem-blue-100/50 hover:bg-creajovem-blue-100/30 dark:bg-white/20  dark:hover:bg-white/10 hover:text-creajovem-green-500 transition-all"
+              >
+                {isDark ? (
+                  <SunIcon className="size-5" />
+                ) : (
+                  <MoonIcon className="size-5" />
+                )}
+              </button>
+            </div>
 
             {/* Menu Items */}
             <div
               className={`flex flex-col xl:flex-row items-center justify-center xl:justify-end w-full gap-8 transition-all duration-300 ${
                 isMenuOpen
-                  ? `absolute p-5 z-50 top-20 left-0 w-full bg-creajovem-blue-1000`
+                  ? `absolute p-5 z-50 top-20 left-0 w-full bg-white dark:bg-creajovem-blue-1000 rounded-b-lg`
                   : "hidden xl:flex"
               }`}
             >
               <div className="w-full flex justify-center items-center">
-                <nav className="w-full md:max-w-max grid space-y-8 xl:space-y-0 xl:grid-flow-col transition-all duration-300 text-xl text-creajovem-blue-500 dark:text-white xl:text-base">
+                <nav className="w-full xl:max-w-max grid space-y-8 xl:space-y-0 xl:grid-flow-col transition-all duration-300 text-xl text-creajovem-blue-500 dark:text-white xl:text-base">
                   {navigation.map((item, index) => (
                     <Link
                       key={index}
@@ -127,9 +190,21 @@ export default function Header() {
               <Button_outline
                 onClick={onOpen}
                 text={"Inscrever"}
-                className={`w-full xl:w-max items-center rounded-full py-3 md:py-2 px-5 transition-all md:flex bg-white/20 hover:bg-white/10 border-creajovem-green-500 text-lg md:text-base`}
+                className={`w-full xl:w-max items-center rounded-full py-3 xl:py-2 px-5 transition-all xl:flex hover:bg-creajovem-green-500 dark:bg-white/20 border-creajovem-green-500 text-lg xl:text-base text-creajovem-blue-500 dark:text-white dark:hover:text-creajovem-blue-1000`}
                 target={true}
               />
+
+              {/* Swich dark */}
+              <button
+                onClick={handleThemeChange}
+                className="hidden xl:block py-3 px-3 rounded bg-creajovem-blue-100/50 hover:bg-creajovem-blue-100/30 dark:bg-white/20  dark:hover:bg-white/10 hover:text-creajovem-green-500 transition-all"
+              >
+                {isDark ? (
+                  <SunIcon className="size-5" />
+                ) : (
+                  <MoonIcon className="size-5" />
+                )}
+              </button>
             </div>
           </div>
         </Container>
@@ -148,21 +223,27 @@ export default function Header() {
             "bg-white hover:bg-creajovem-green-500 text-creajovem-blue-900 transition-all p-2 rounded-full",
         }}
       >
-        <ModalContent className="bg-creajovem-blue-600">
+        <ModalContent className="bg-white dark:bg-creajovem-blue-600 text-creajovem-blue-500 dark:text-white">
           <ModalHeader className="flex flex-col gap-5 p-5">
             <Text_head_2 className={"text-creajovem-green-500 font-bold"}>
               Inscrição
             </Text_head_2>
             <Text_body_base className={"font-normal"}>
               Para solicitar a inscrição no Programa Jovem Engenheiro do Crea-SC
-              é necessário ler e concordar com o Termo de Uso e Política de
-              Privacidade do Programa
+              é necessário ler e concordar com o{" "}
+              <Link
+                href={"https://portal.crea-sc.org.br/lgpd/"}
+                className="underline underline-offset-2 text-creajovem-green-500 "
+              >
+                Termo de Uso e Política de Privacidade
+              </Link>{" "}
+              do Programa
             </Text_body_base>
           </ModalHeader>
           <ModalBody className="p-5 space-y-5">
-            <div className="flex flex-col md:flex-row justify-between">
+            <div className="flex flex-col xl:flex-row justify-between">
               {StepsForInscription.map((step, index) => (
-                <div key={index} className="flex flex-col md:flex-row w-full">
+                <div key={index} className="flex flex-col xl:flex-row w-full">
                   <div
                     className={`flex flex-col gap-2 p-2 border bg-white/10 rounded-lg`}
                   >
@@ -178,16 +259,16 @@ export default function Header() {
 
                   {index !== StepsForInscription.length - 1 && (
                     <div className="flex items-center justify-center p-2">
-                      <ChevronRightIcon className="h-6 w-6 text-white rotate-90 md:rotate-0" />
+                      <ChevronRightIcon className="h-5 w-5 text-current rotate-90 xl:rotate-0" />
                     </div>
                   )}
                 </div>
               ))}
             </div>
             <Button_outline
-              href={"https://www.creasc.org.br/creajovem"}
+              href={"https://creanet.crea-sc.org.br/login"}
               text={"Inscrever"}
-              className={`w-full md:w-max items-center rounded-full py-3 md:py-3 px-10 transition-all text-creajovem-blue-600 hover:text-white md:flex bg-creajovem-green-500 hover:bg-white/10 border-creajovem-green-500 font-bold`}
+              className={`w-full xl:w-max items-center rounded-full py-3 xl:py-3 px-10 transition-all text-creajovem-blue-600 dark:hover:text-white xl:flex bg-creajovem-green-500 hover:bg-white/10 border-creajovem-green-500 font-bold`}
               target={true}
             />
           </ModalBody>
