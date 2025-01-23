@@ -115,13 +115,13 @@ export default function Header() {
                 <img
                   src="/brand/creajovem_logo_dark.png"
                   alt="Logotipo Crea Jovem"
-                  className="max-w-52"
+                  className="max-w-40 md:max-w-52"
                 />
               ) : (
                 <img
                   src="/brand/creajovem_logo_light.png"
                   alt="Logotipo Crea Jovem"
-                  className="max-w-52"
+                  className="max-w-40 md:max-w-52"
                 />
               )}
             </Link>

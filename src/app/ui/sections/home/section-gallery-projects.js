@@ -29,7 +29,7 @@ export default function SectionGalleryProjects({ sectionName, dataProjects }) {
         >
           {dataProjects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[350px] md:h-[340px] flex md:items-center justify-center">
+              <div className="h-[365px] md:h-[340px] flex md:items-center justify-center">
                 <CardProject
                   title={project.name}
                   category={project.category}

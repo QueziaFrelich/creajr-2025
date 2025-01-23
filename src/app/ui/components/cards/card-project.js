@@ -128,7 +128,7 @@ export default function CardProject({
                 </Text_body_base>
               </ModalHeader>
 
-              <ModalBody className="p-2 mt-4">
+              <ModalBody className="p-4 mt-4">
                 <div className="flex items-center justify-between">
                   {/* Title list */}
                   <Text_decoration_border>
@@ -155,7 +155,7 @@ export default function CardProject({
                     <select
                       value={selectedYear}
                       onChange={(e) => setSelectedYear(e.target.value)}
-                      className="items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10"
+                      className="focus:text-creajovem-blue-600 focus:bg-creajovem-blue-100  items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10"
                     >
                       <option value="">Todos os anos</option>
                       {years.map((year) => (
@@ -182,12 +182,12 @@ export default function CardProject({
                               ? `/${encodeURI(item.company.name)}`
                               : "")
                           }
-                          className="flex items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all"
+                          className="flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all"
                         >
                           {/* image */}
                           <div
                             style={{ backgroundImage: `url('${item.image}')` }}
-                            className="h-32 w-full min-w-32 max-w-44 bg-cover bg-center rounded-md"
+                            className="h-32 w-full min-w-32 md:max-w-44 bg-cover bg-center rounded-md"
                           ></div>
 
                           {/* title, tags and description */}

@@ -19,17 +19,17 @@ export default function Footer() {
     <>
       {/* Section Contact */}
       <section
-        className="py-20 border-t border-creajovem-green-500  min-h-96 flex flex-col justify-center bg-radial-gradient bg-creajovem-blue-500 dark:bg-creajovem-blue-1000"
+        className="flex flex-col justify-center mt-10 md:mt-5"
         id="contato"
       >
         <Container
           className={
-            "flex flex-col md:flex-row justify-between gap-16 text-white"
+            "flex flex-col md:flex-row justify-between gap-16 text-creajovem-blue-500 dark:text-white py-20 border-t border-creajovem-blue-500 dark:border-white "
           }
         >
           {/* Section 1 */}
           <div className="space-y-5">
-            <div className="flex flex-col md:flex-row md:items-center gap-5 w-72 md:w-full">
+            <div className="flex flex-col md:flex-row md:items-center gap-5 w-72 md:w-full ">
               <Link
                 href={"https://portal.crea-sc.org.br/ "}
                 target="_blank"
@@ -38,7 +38,7 @@ export default function Footer() {
                 <img
                   src="/brand/crea_logo_white.png"
                   alt="Logo Crea"
-                  className="w-full max-w-60"
+                  className="w-full max-w-60 invert-0 dark:grayscale dark:invert"
                 />
               </Link>
               <div className="flex md:hidden gap-5 items-center">
@@ -72,7 +72,7 @@ export default function Footer() {
                 <img
                   src="/brand/creajovem_logo.png"
                   alt="Logo Crea Jovem"
-                  className="w-full max-w-60"
+                  className="w-full max-w-60 invert-0 dark:grayscale dark:invert"
                 />
               </Link>
             </div>

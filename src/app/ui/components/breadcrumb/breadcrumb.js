@@ -40,7 +40,9 @@ export default function Breadcrumb({
           return (
             <React.Fragment key={index}>
               <li className={itemClasses}>
-                <Link href={href}>{decodedLink}</Link>
+                <Link href={href} className="text-xs md:text-sm">
+                  {decodedLink}
+                </Link>
               </li>
               {pathNames.length !== index + 1 && separator}
             </React.Fragment>

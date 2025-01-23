@@ -8,7 +8,7 @@ import Text_link from "../../components/text/text-link";
 export default function SectionAbout({}) {
   return (
     <Container className={"pb-10"}>
-      <section className="p-10 space-y-5 rounded-xl bg-gradient-to-bl text-creajovem-blue-500 dark:text-white from-creajovem-green-500/30 to-creajovem-blue-100/50 dark:to-creajovem-blue-900 to-70%">
+      <section className="p-5 md:p-10 space-y-5 rounded-xl bg-gradient-to-bl text-creajovem-blue-500 dark:text-white from-creajovem-green-500/30 to-creajovem-blue-100/50 dark:to-creajovem-blue-900 to-70%">
         <div className="space-y-3">
           <Text_head_2
             className={

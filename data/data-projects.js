@@ -47,7 +47,7 @@ export const dataProjects = [
     button: {
       type: "link",
       text: "Conferir oportunidades",
-      href: "#",
+      href: "https://portal.crea-sc.org.br/servicos/bolsa-de-empregos/",
     },
     modal: null,
   },
