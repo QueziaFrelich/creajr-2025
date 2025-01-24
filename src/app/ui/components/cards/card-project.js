@@ -36,7 +36,8 @@ export default function CardProject({
     if (!modal?.list?.items) return [];
     const uniqueYears = new Set(
       modal.list.items
-        .map((item) => item.tags?.date?.split("/")[2])
+        .flatMap((item) => item.tags?.date || [])
+        .map((date) => date.split("/")[2])
         .filter(Boolean)
     );
     return Array.from(uniqueYears).sort((a, b) => b - a);
@@ -46,7 +47,7 @@ export default function CardProject({
   const filteredItems = useMemo(() => {
     if (!selectedYear) return modal?.list?.items;
     return modal?.list?.items?.filter((item) =>
-      item.tags?.date?.includes(selectedYear)
+      item.tags?.date?.some((date) => date.includes(selectedYear))
     );
   }, [modal, selectedYear]);
 
@@ -202,12 +203,17 @@ export default function CardProject({
 
                               {/* tags */}
                               {item.tags && (
-                                <div className="flex items-center gap-3">
-                                  {item.tags.date && (
-                                    <TagBase className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 font-medium">
-                                      {item.tags.date}
-                                    </TagBase>
-                                  )}
+                                <div className="flex flex-wrap items-center gap-3">
+                                  {item.tags.date.length &&
+                                    item.tags.date.map((date, index) => (
+                                      <TagBase
+                                        key={index}
+                                        className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
+                                      >
+                                        {date}
+                                      </TagBase>
+                                    ))}
+
                                   {item.tags.region && (
                                     <TagBase className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 font-medium">
                                       {item.tags.region}

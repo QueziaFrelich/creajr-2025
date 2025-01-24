@@ -20,7 +20,7 @@ export const dataProjects = [
             image: "",
             title: "",
             description: ``,
-            tags: { project: "", date: "", hour: "", region: "" },
+            tags: { project: "", date: [], hour: "", region: "" },
             href: "#",
             gallery: ["", "", ""],
             testimonials: [{ name: "", text: "" }],
@@ -28,8 +28,8 @@ export const dataProjects = [
               name: "",
               logo: "",
               description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
-              contact: { address: "", website: "" },
+              socialmedia: { instagram: "", linkedin: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+              contact: { address: "", website: "" }, // IMPORTANT: Always we need to put "https://" in the URL
             },
           },
         ],
@@ -86,86 +86,32 @@ Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conh
         download: null,
         items: [
           {
-            image: "https://placehold.co/600x400",
+            image: "/projects/head-energia/banner.png",
             title:
-              "Jared - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
+              "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
             description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
             tags: {
-              project: "Projeto 1",
-              date: "10/03/2024",
-              hour: "17:00h",
-              region: "Regional Araranguá",
+              project:
+                "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
+              date: ["03/02/2025", "10/02/2025", "17/02/2025", "24/02/2025"],
+              hour: "19:00h",
+              region: null,
             },
             href: "/circuito-de-palestras",
-            gallery: [
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-            ],
-            testimonials: [
-              {
-                name: "Pessoa 1 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-              {
-                name: "Pessoa 2 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-            ],
+            gallery: [],
+            testimonials: [],
             company: {
-              name: "Nome da Empresa",
-              logo: "https://placehold.co/600x400",
+              name: "Head Energia",
+              logo: "/projects/head-energia/logotipo.png",
               description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
-              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
+                "A Head Energia é a plataforma on-line para você avançar na sua carreira no Setor Elétrico. Nosso portfólio completo de capacitação é a ponte para você entender e aumentar sua relevância no mundo corporativo. Nossa comunidade fortalecerá seu networking com os profissionais mais atuantes e comprometidos do setor, de estagiários a CEOs de multinacionais.",
+              socialmedia: {
+                instagram: "https://www.instagram.com/head.energia/", // IMPORTANT: Always we need to put "https://"
+                linkedin: "https://www.linkedin.com/school/head-energia/", // IMPORTANT: Always we need to put "https://"
+              },
               contact: {
-                address: "Rua 123, 456",
-                website: "https://www.google.com",
-              },
-            },
-          },
-          {
-            image: "https://placehold.co/600x400",
-            title:
-              "SOON 2 - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
-            description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: {
-              project: "Projeto 2",
-              date: "10/03/2025",
-              hour: "06:00h",
-              region: "Regional Sao Paulo",
-            },
-            href: "/circuito-de-palestras",
-            gallery: [
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-            ],
-            testimonials: [
-              {
-                name: "Pessoa 1 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-              {
-                name: "Pessoa 2 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-            ],
-            company: {
-              name: "Nome da Empresa 2",
-              logo: "https://placehold.co/600x400",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
-              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
-              contact: {
-                address: "Rua 123, 456",
-                website: "https://www.google.com",
+                address: "Online pelo Zoom",
+                website: "https://www.headenergia.net", // IMPORTANT: Always we need to put "https://"
               },
             },
           },
@@ -180,105 +126,11 @@ Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conh
     summary:
       "Participe de visitas técnicas, mesas-redondas com líderes e reuniões nas Entidades de Classe. Conecte-se, aprenda na prática e contribua para o futuro da sua profissão!",
     button: {
-      type: "modal",
+      type: "link",
       text: "Ver detalhes",
-      href: "#",
+      href: "/em-breve",
     },
-    modal: {
-      description: `Descubra o mercado na prática com visitas técnicas a empresas, obras e serviços, conhecendo de perto operações e inovações que fazem a diferença no setor.
-Participe de mesas-redondas com líderes do sistema e das Entidades de Classe, conecte-se a profissionais influentes e saiba como contribuir para o avanço da sua profissão.
-Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja protagonista nas decisões que moldam o futuro da profissão e fortalecem o sistema!`,
-      list: {
-        title: "Eventos",
-        download: null,
-        items: [
-          {
-            image: "https://placehold.co/600x400",
-            title:
-              "Jared - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
-            description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: {
-              project: "Projeto 1",
-              date: "10/03/2024",
-              hour: "17:00h",
-              region: "Regional Araranguá",
-            },
-            href: "/visitas-tecnicas",
-            gallery: [
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-            ],
-            testimonials: [
-              {
-                name: "Pessoa 1 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-              {
-                name: "Pessoa 2 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-            ],
-            company: {
-              name: "Nome da Empresa",
-              logo: "https://placehold.co/600x400",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
-              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
-              contact: {
-                address: "Rua 123, 456",
-                website: "https://www.google.com",
-              },
-            },
-          },
-          {
-            image: "https://placehold.co/600x400",
-            title:
-              "SOON 2 - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
-            description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: {
-              project: "Projeto 2",
-              date: "10/03/2025",
-              hour: "06:00h",
-              region: "Regional Sao Paulo",
-            },
-            href: "/visitas-tecnicas",
-            gallery: [
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-              "https://placehold.co/600x400",
-            ],
-            testimonials: [
-              {
-                name: "Pessoa 1 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-              {
-                name: "Pessoa 2 - Buuc Analítica e Design",
-                text: "Admiro os convites de mulheres apresentarem suas ideias e cases no palco, a representação feminina faz parte de um processo (ainda) lento e contínuo de inspiração para o avanço igualitário da sociedade. O evento organizado pelo CREA-SC junto a sua rede de parceiros está de parabéns.",
-              },
-            ],
-            company: {
-              name: "Nome da Empresa 2",
-              logo: "https://placehold.co/600x400",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor arcu at purus porta, eget pellentesque lorem porttitor. Vestibulum et diam lorem. Phasellus id nunc in quam ultricies tempus ac dignissim nibh. Nulla sagittis odio neque, eu ullamcorper ligula porttitor quis.",
-              socialmedia: { instagram: "#", facebook: "#", linkedin: "#" },
-              contact: {
-                address: "Rua 123, 456",
-                website: "https://www.google.com",
-              },
-            },
-          },
-        ],
-      },
-    },
+    modal: null,
   },
   {
     name: "Mentorias",
@@ -367,7 +219,7 @@ Transforme conhecimento em impacto!`,
               name: "",
               logo: "",
               description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
+              socialmedia: { instagram: "", linkedin: "" },
               contact: { address: "", website: "" },
             },
           },
@@ -383,7 +235,7 @@ Transforme conhecimento em impacto!`,
               name: "",
               logo: "",
               description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
+              socialmedia: { instagram: "", linkedin: "" },
               contact: { address: "", website: "" },
             },
           },
@@ -399,7 +251,7 @@ Transforme conhecimento em impacto!`,
               name: "",
               logo: "",
               description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
+              socialmedia: { instagram: "", linkedin: "" },
               contact: { address: "", website: "" },
             },
           },
@@ -416,7 +268,7 @@ Transforme conhecimento em impacto!`,
               name: "",
               logo: "",
               description: "",
-              socialmedia: { instagram: "", facebook: "", linkedin: "" },
+              socialmedia: { instagram: "", linkedin: "" },
               contact: { address: "", website: "" },
             },
           },

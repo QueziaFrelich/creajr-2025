@@ -24,6 +24,7 @@ import Breadcrumb from "@/app/ui/components/breadcrumb/breadcrumb";
 import { useRef } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import Link from "next/link";
+import Button_outline from "@/app/ui/components/buttons/button_outline.js";
 
 export default function LayoutVisitas({}) {
   const swiperGalleryRef = useRef(null);
@@ -38,6 +39,23 @@ export default function LayoutVisitas({}) {
     const projectSlug = encodeURI(project?.company?.name || "");
     return projectSlug === slug;
   });
+  if (!selectProject)
+    return (
+      <Container
+        className={
+          "space-y-20 py-20 min-h-96 text-creajovem-blue-500 dark:text-white"
+        }
+      >
+        <Text_head_1 className={"mb-5"}>Projeto não encontrado</Text_head_1>
+        <Button_outline
+          href={"/"}
+          text={"Voltar para a página inicial"}
+          className={
+            "items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 "
+          }
+        ></Button_outline>
+      </Container>
+    );
 
   return (
     <Container
@@ -50,62 +68,146 @@ export default function LayoutVisitas({}) {
           className="mb-3"
           separator="/"
           activeClasses="text-creajovem-green-500"
-          listClasses="px-1 text-sm"
+          listClasses="px-1 text-xs md:text-sm"
         />
+
+        {/* Title */}
         <Text_head_1 className={"text-creajovem-green-500 font-bold"}>
-          Visita a {selectProject.tags.project} - {selectProject.company.name}
+          {selectProject.tags.project}
         </Text_head_1>
+
+        {/* Description */}
         <Text_body_base className={"md:w-3/4"}>
           {selectProject.description}
         </Text_body_base>
+
+        {/* List */}
         <div className="space-y-1">
-          <div className="flex items-center gap-3">
-            <MapPinIcon className="size-5" />
-            <Text_body_base>
-              {selectProject.company.contact.address}
-            </Text_body_base>
-          </div>
-          <div className="flex items-center gap-3">
-            <CalendarDaysIcon className="size-5" />
-            <Text_body_base>
-              {selectProject.tags.date} - {selectProject.tags.hour}
-            </Text_body_base>
-          </div>
-          <div className="flex items-center gap-3">
-            <NewspaperIcon className="size-5" />
-            <Text_body_base>
-              {selectProject.company.contact.website}
-            </Text_body_base>
-          </div>
+          {selectProject.company.contact.address && (
+            <div className="flex items-center gap-3">
+              <MapPinIcon className="size-5" />
+              <Text_body_base>
+                {selectProject.company.contact.address}
+              </Text_body_base>
+            </div>
+          )}
+          {selectProject.tags.date.length > 0 && (
+            <div className="flex items-center gap-3">
+              <CalendarDaysIcon className="size-5" />
+              <Text_body_base>
+                <span>
+                  {selectProject.tags.date.length > 0 &&
+                    selectProject.tags.date.reduce(
+                      (acc, date, index, array) => {
+                        if (index === 0) return date;
+                        if (index === array.length - 1)
+                          return `${acc} e ${date}`;
+                        return `${acc}, ${date}`;
+                      },
+                      ""
+                    )}
+                </span>
+                {selectProject.tags.hour && ` às ${selectProject.tags.hour}`}
+              </Text_body_base>
+            </div>
+          )}
+
+          {selectProject.company.contact.website && (
+            <div className="flex items-center gap-3">
+              <NewspaperIcon className="size-5" />
+              <Link
+                href={selectProject.company.contact.website}
+                target="_blank"
+              >
+                {selectProject.company.contact.website.replace(
+                  /(^\w+:|^)\/\//,
+                  ""
+                )}
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Gallery section */}
-      <section className="space-y-5">
-        <div className="flex justify-between items-center">
-          <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
-            Galeria de fotos
-          </Text_head_3>
+      {selectProject.gallery.length > 0 && (
+        <section className="space-y-5">
+          <div className="flex justify-between items-center">
+            <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
+              Galeria de fotos
+            </Text_head_3>
 
-          {/* Navigation Buttons */}
-          <div className="px-4 flex gap-5 items-center">
-            <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
-              onClick={() => swiperGalleryRef.current?.slidePrev()}
-            >
-              <ChevronLeftIcon className="size-5" />
-            </button>
-            <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
-              onClick={() => swiperGalleryRef.current?.slideNext()}
-            >
-              <ChevronRightIcon className="size-5" />
-            </button>
+            {/* Navigation Buttons */}
+            <div className="px-4 flex gap-5 items-center">
+              <button
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                onClick={() => swiperGalleryRef.current?.slidePrev()}
+              >
+                <ChevronLeftIcon className="size-4" />
+              </button>
+              <button
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                onClick={() => swiperGalleryRef.current?.slideNext()}
+              >
+                <ChevronRightIcon className="size-4" />
+              </button>
+            </div>
           </div>
-        </div>
-        <PhotoProvider>
+          <PhotoProvider>
+            <Swiper
+              onSwiper={(swiper) => (swiperGalleryRef.current = swiper)}
+              spaceBetween={20}
+              breakpoints={{
+                360: { slidesPerView: 1.2 },
+                640: { slidesPerView: 1.5 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+              className="w-full"
+            >
+              {selectProject.gallery.map((picture, index) => (
+                <SwiperSlide key={index}>
+                  <PhotoView src={picture}>
+                    <img
+                      src={picture}
+                      alt={`Fotografia do projeto ${selectProject.tags.project}`}
+                      className="w-full cursor-pointer"
+                    />
+                  </PhotoView>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </PhotoProvider>
+        </section>
+      )}
+
+      {/* Testimonial section */}
+      {selectProject.testimonials.length > 0 && (
+        <section className="space-y-5">
+          <div className="flex justify-between items-center">
+            <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
+              Depoimentos
+            </Text_head_3>
+
+            {/* Navigation Buttons */}
+            <div className="px-4 flex gap-5 items-center">
+              <button
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                onClick={() => swiperTestimonialRef.current?.slidePrev()}
+              >
+                <ChevronLeftIcon className="size-4" />
+              </button>
+              <button
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                onClick={() => swiperTestimonialRef.current?.slideNext()}
+              >
+                <ChevronRightIcon className="size-4" />
+              </button>
+            </div>
+          </div>
+
           <Swiper
-            onSwiper={(swiper) => (swiperGalleryRef.current = swiper)}
+            onSwiper={(swiper) => (swiperTestimonialRef.current = swiper)}
             spaceBetween={20}
             breakpoints={{
               360: { slidesPerView: 1.2 },
@@ -115,69 +217,23 @@ export default function LayoutVisitas({}) {
             }}
             className="w-full"
           >
-            {selectProject.gallery.map((picture, index) => (
+            {selectProject.testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <PhotoView src={picture}>
-                  <img
-                    src={picture}
-                    alt={`Fotografia do projeto ${selectProject.tags.project}`}
-                    className="w-full cursor-pointer"
-                  />
-                </PhotoView>
+                <div className=" flex flex-col gap-5 p-5 border bg-white/20 rounded-lg">
+                  <Text_body_sm>{`"${testimonial.text}"`}</Text_body_sm>
+                  <Text_body_sm
+                    className={"font-bold text-creajovem-green-500"}
+                  >
+                    {testimonial.name}
+                  </Text_body_sm>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </PhotoProvider>
-      </section>
+        </section>
+      )}
 
-      {/* Testimonial section */}
-      <section className="space-y-5">
-        <div className="flex justify-between items-center">
-          <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
-            Depoimentos
-          </Text_head_3>
-
-          {/* Navigation Buttons */}
-          <div className="px-4 flex gap-5 items-center">
-            <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
-              onClick={() => swiperTestimonialRef.current?.slidePrev()}
-            >
-              <ChevronLeftIcon className="size-4" />
-            </button>
-            <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
-              onClick={() => swiperTestimonialRef.current?.slideNext()}
-            >
-              <ChevronRightIcon className="size-4" />
-            </button>
-          </div>
-        </div>
-
-        <Swiper
-          onSwiper={(swiper) => (swiperTestimonialRef.current = swiper)}
-          spaceBetween={20}
-          breakpoints={{
-            360: { slidesPerView: 1.2 },
-            640: { slidesPerView: 1.5 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-          }}
-          className="w-full"
-        >
-          {selectProject.testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className=" flex flex-col gap-5 p-5 border bg-white/20 rounded-lg">
-                <Text_body_sm>{`"${testimonial.text}"`}</Text_body_sm>
-                <Text_body_sm className={"font-bold text-creajovem-green-500"}>
-                  {testimonial.name}
-                </Text_body_sm>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
-
+      {/* Company section */}
       <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-5">
         {/* image */}
         <div
@@ -190,7 +246,7 @@ export default function LayoutVisitas({}) {
           {/* Title and description */}
           <div className="space-y-3">
             <Text_head_3 className={"font-bold text-creajovem-green-500"}>
-              Sobre {selectProject.company.name}
+              {selectProject.company.name}
             </Text_head_3>
 
             {/* Description */}
@@ -202,6 +258,7 @@ export default function LayoutVisitas({}) {
             {selectProject.company.socialmedia.instagram && (
               <Link
                 href={selectProject.company.socialmedia.instagram}
+                target="_blank"
                 className={"transition-all hover:text-creajovem-green-500"}
               >
                 <svg
@@ -225,6 +282,7 @@ export default function LayoutVisitas({}) {
             {selectProject.company.socialmedia.linkedin && (
               <Link
                 href={selectProject.company.socialmedia.linkedin}
+                target="_blank"
                 className={"transition-all hover:text-creajovem-green-500"}
               >
                 <svg
@@ -248,6 +306,7 @@ export default function LayoutVisitas({}) {
             {selectProject.company.contact.website && (
               <Link
                 href={selectProject.company.contact.website}
+                target="_blank"
                 className={"transition-all hover:text-creajovem-green-500"}
               >
                 <svg
