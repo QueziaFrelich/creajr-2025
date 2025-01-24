@@ -175,60 +175,82 @@ export default function CardProject({
                   filteredItems && (
                     <div className="space-y-3">
                       {filteredItems.map((item, index) => (
-                        <Link
+                        <button
                           key={index}
-                          href={
-                            item.href +
-                            (item.company.name
-                              ? `/${encodeURI(item.company.name)}`
-                              : "")
-                          }
-                          className="flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all"
+                          className="text-start w-full"
+                          disabled={item.active}
                         >
-                          {/* image */}
-                          <div
-                            style={{ backgroundImage: `url('${item.image}')` }}
-                            className="h-32 w-full min-w-32 md:max-w-44 bg-cover bg-center rounded-md"
-                          ></div>
+                          <Link
+                            href={
+                              item.href +
+                              (item.company.name
+                                ? `/${encodeURI(item.company.name)}`
+                                : "")
+                            }
+                            className={`flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all ${
+                              !item.active && "cursor-not-allowed"
+                            }`}
+                          >
+                            {/* image */}
+                            {item.image && (
+                              <div
+                                style={{
+                                  backgroundImage: `url('${item.image}')`,
+                                }}
+                                className="h-32 w-full min-w-32 md:max-w-44 bg-cover bg-center rounded-md"
+                              ></div>
+                            )}
 
-                          {/* title, tags and description */}
-                          <div className="flex flex-col p-5">
-                            {/* Title and tags */}
-                            <div className="space-y-3">
-                              <Text_head_5
-                                className={"font-bold text-creajovem-green-500"}
-                              >
-                                {item.title}
-                              </Text_head_5>
+                            {/* title, tags and description */}
+                            <div
+                              className={`flex flex-col ${
+                                item.image ? "p-5" : "p-2"
+                              }`}
+                            >
+                              {/* Title and tags */}
+                              <div className="space-y-3">
+                                {/* Title */}
+                                {item.title && (
+                                  <Text_head_5
+                                    className={
+                                      "font-bold text-creajovem-green-500"
+                                    }
+                                  >
+                                    {item.title}
+                                  </Text_head_5>
+                                )}
 
-                              {/* tags */}
-                              {item.tags && (
-                                <div className="flex flex-wrap items-center gap-3">
-                                  {item.tags.date.length &&
-                                    item.tags.date.map((date, index) => (
-                                      <TagBase
-                                        key={index}
-                                        className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
-                                      >
-                                        {date}
+                                {/* tags */}
+                                {item.tags && (
+                                  <div className="flex flex-wrap items-center gap-3">
+                                    {item.tags.date.length > 0 &&
+                                      item.tags.date.map((date, index) => (
+                                        <TagBase
+                                          key={index}
+                                          className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
+                                        >
+                                          {date}
+                                        </TagBase>
+                                      ))}
+
+                                    {item.tags.region && (
+                                      <TagBase className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium">
+                                        {item.tags.region}
                                       </TagBase>
-                                    ))}
+                                    )}
+                                  </div>
+                                )}
+                              </div>
 
-                                  {item.tags.region && (
-                                    <TagBase className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 font-medium">
-                                      {item.tags.region}
-                                    </TagBase>
-                                  )}
-                                </div>
+                              {/* Description */}
+                              {item.description && (
+                                <Text_body_sm className="mt-2">
+                                  {item.description}
+                                </Text_body_sm>
                               )}
                             </div>
-
-                            {/* Description */}
-                            <Text_body_sm className={item.tags && "mt-2"}>
-                              {item.description}
-                            </Text_body_sm>
-                          </div>
-                        </Link>
+                          </Link>
+                        </button>
                       ))}
                     </div>
                   )

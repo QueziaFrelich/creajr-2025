@@ -1,35 +1,57 @@
 export const dataProjects = [
   // Template
   {
-    name: "",
-    category: "",
-    image: "",
-    summary: "",
+    name: "", // STRING: Nome do projeto ou elemento. Exemplo: "Oportunidades de emprego"
+    category: "", // STRING: Categoria associada. Exemplo: "Mercado de Trabalho"
+    image: "", // STRING: Caminho ou URL da imagem. Exemplo: "/projects/oportunidades-de-emprego.jpg"
+    summary: "", // STRING: Breve descrição do projeto ou elemento. Exemplo: "Conectamos você às melhores oportunidades no mercado..."
     button: {
-      type: "link",
-      text: "",
-      href: "#",
+      // Configuração do botão principal
+      type: "link", // STRING: Tipo de botão. Valores possíveis: "link" (abre um link), "modal" (abre um modal), ou null (sem botão).
+      text: "", // STRING: Texto que será exibido no botão. Exemplo: "Conferir oportunidades".
+      href: "#", // STRING: URL ou âncora do link. Certifique-se de incluir "https://" se for uma URL completa.
     },
     modal: {
-      description: ``,
+      // Configuração do modal associado (se aplicável)
+      description: ``, // STRING: Descrição detalhada que aparecerá no modal. Pode incluir texto longo e formatação.
       list: {
-        title: "",
-        download: null,
+        // Configuração da lista dentro do modal
+        title: "", // STRING: Título da lista. Exemplo: "Eventos".
+        download: null, // STRING ou null: URL para download de um arquivo relacionado. Exemplo: "https://example.com/file.pdf".
         items: [
+          // Itens individuais dentro da lista
           {
-            image: "",
-            title: "",
-            description: ``,
-            tags: { project: "", date: [], hour: "", region: "" },
-            href: "#",
-            gallery: ["", "", ""],
-            testimonials: [{ name: "", text: "" }],
+            active: true, // BOOLEAN: Indica se este item está ativo e deve ser exibido.
+            image: "", // STRING: URL da imagem associada ao item.
+            title: "", // STRING: Título do item. Exemplo: "SOON - Setor Elétrico".
+            description: ``, // STRING: Descrição detalhada do item.
+            tags: {
+              // Tags associadas ao item
+              project: "", // STRING: Nome do projeto associado.
+              date: [], // ARRAY: Datas associadas ao projeto no formato "DD/MM/AAAA".
+              hour: "", // STRING: Hora associada. Exemplo: "19:00h".
+              region: "", // STRING ou null: Região associada ao projeto.
+            },
+            href: "#", // STRING: Link relacionado ao item. Certifique-se de incluir "https://" se for externo.
+            gallery: ["", "", ""], // ARRAY: Lista de URLs de imagens adicionais. // Galeria de imagens
+            testimonials: [
+              { name: "", text: "" }, // OBJECT: Nome e texto do depoimento. // Depoimentos relacionados
+            ],
             company: {
-              name: "",
-              logo: "",
-              description: "",
-              socialmedia: { instagram: "", linkedin: "" }, // IMPORTANT: Always we need to put "https://" in the URL
-              contact: { address: "", website: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+              // Informações da empresa associada
+              name: "", // STRING: Nome da empresa.
+              logo: "", // STRING: URL do logo da empresa.
+              description: "", // STRING: Descrição da empresa.
+              socialmedia: {
+                // Redes sociais da empresa
+                instagram: "", // STRING: URL do Instagram. Sempre inclua "https://".
+                linkedin: "", // STRING: URL do LinkedIn. Sempre inclua "https://".
+              },
+              contact: {
+                // Informações de contato da empresa
+                address: "", // STRING: Endereço físico ou localização do evento.
+                website: "", // STRING: URL do site. Sempre inclua "https://".
+              },
             },
           },
         ],
@@ -86,6 +108,7 @@ Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conh
         download: null,
         items: [
           {
+            active: true,
             image: "/projects/head-energia/banner.png",
             title:
               "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
@@ -126,11 +149,43 @@ Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conh
     summary:
       "Participe de visitas técnicas, mesas-redondas com líderes e reuniões nas Entidades de Classe. Conecte-se, aprenda na prática e contribua para o futuro da sua profissão!",
     button: {
-      type: "link",
+      type: "modal",
       text: "Ver detalhes",
-      href: "/em-breve",
+      href: "#",
     },
-    modal: null,
+    modal: {
+      description: `Descubra o mercado na prática com visitas técnicas a empresas, obras e serviços, conhecendo de perto operações e inovações que fazem a diferença no setor.
+Participe de mesas-redondas com líderes do sistema e das Entidades de Classe, conecte-se a profissionais influentes e saiba como contribuir para o avanço da sua profissão.
+Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja protagonista nas decisões que moldam o futuro da profissão e fortalecem o sistema!`,
+      list: {
+        title: "Visitas",
+        download: null,
+        items: [
+          {
+            active: false,
+            image: "",
+            title: "Em breve",
+            description: `A nossa próxima visita está programada para março de 2025. Fique atento para mais informações!`,
+            tags: {
+              project: "",
+              date: [],
+              hour: "",
+              region: "Regional de Florianópolis",
+            },
+            href: "#",
+            gallery: ["", "", ""],
+            testimonials: [{ name: "", text: "" }],
+            company: {
+              name: "",
+              logo: "",
+              description: "",
+              socialmedia: { instagram: "", linkedin: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+              contact: { address: "", website: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+            },
+          },
+        ],
+      },
+    },
   },
   {
     name: "Mentorias",
@@ -208,6 +263,7 @@ Transforme conhecimento em impacto!`,
           "https://www.renfe.com/content/dam/renfe/es/General/PDF-y-otros/Ejemplo-de-descarga-pdf.pdf",
         items: [
           {
+            active: true,
             image: "/projects/list/sistema-profissional/confea.jpg",
             title: "CONFEA",
             description: `Descubra o papel do Confea como órgão máximo do Sistema Profissional, sua importância na regulamentação das profissões e como ele garante a valorização e ética na Engenharia, Agronomia e Geociências.`,
@@ -224,6 +280,7 @@ Transforme conhecimento em impacto!`,
             },
           },
           {
+            active: true,
             image: "/projects/list/sistema-profissional/crea.jpg",
             title: "CREA-SC",
             description: `Entenda como o CREA-SC atua no seu dia a dia, desde o registro profissional até a fiscalização das atividades, promovendo segurança e qualidade nos serviços de Engenharia, Agronomia. e Geociências.`,
@@ -240,6 +297,7 @@ Transforme conhecimento em impacto!`,
             },
           },
           {
+            active: true,
             image: "/projects/list/sistema-profissional/mutua.jpg",
             title: "MUTUA",
             description: `Saiba como a Mútua apoia profissionais registrados com benefícios exclusivos, como linhas de crédito, previdência e assistência, ajudando no crescimento pessoal e profissional.`,
@@ -256,6 +314,7 @@ Transforme conhecimento em impacto!`,
             },
           },
           {
+            active: true,
             image:
               "/projects/list/sistema-profissional/entidades-de-classe.jpg",
             title: "ENTIDADES DE CLASSE",
