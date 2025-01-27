@@ -194,7 +194,7 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     summary:
       "Conecte-se a mentores experientes que oferecem orientação personalizada em carreira, gestão, inovação e desafios do setor, impulsionando seu crescimento profissional!",
     button: {
-      type: "link",
+      type: null,
       text: "Ver mentores",
       href: "/mentorias",
     },
