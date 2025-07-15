@@ -2,50 +2,64 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Container from "../../components/container/container";
 import Text_body_base from "../../components/text/text-body-base";
 import Text_head_2 from "../../components/text/text-head-2";
-import Text_head_4 from "../../components/text/text-head-4";
-import Text_link from "../../components/text/text-link";
+import Icon_Comunidade from "../../icons/cards/icon-comunidade";
+import Icon_Desenvolvimento from "../../icons/cards/icon-desenvolvimento";
+import Icon_Oportunidade from "../../icons/cards/icon-oportunidade";
 
-export default function SectionAbout({}) {
+
+
+export default function SectionAbout({ }) {
   return (
     <Container className={"pb-10"}>
-      <section className="p-5 md:p-10 space-y-5 rounded-xl bg-gradient-to-bl text-creajovem-blue-500 dark:text-white from-creajovem-green-500/30 to-creajovem-blue-100/50 dark:to-creajovem-blue-900 to-70%">
+      <section className="p-5 md:p-10 space-y-5 rounded-xl text-creajovem-blue-500 dark:text-white from-creajovem-green-500/30 to-creajovem-blue-100/50 dark:to-creajovem-blue-900 to-70%">
         <div className="space-y-3">
           <Text_head_2
             className={
-              "font-bold text-creajovem-blue-400 dark:text-creajovem-green-500"
+              "font-bold text-creajovem-rose-500"
             }
           >
             O programa
           </Text_head_2>
           <Text_body_base>
-            <strong>Impulsionar</strong> e <strong>fortalecer</strong> jovens
-            talentos, oferecendo capacitação contínua, acesso ao mercado de
-            trabalho, estímulo à <strong>inovação, empreendedorismo</strong> e{" "}
-            <strong>liderança</strong>.
+            <strong>O CREA Jr-SC é um programa gratuito para quem transforma ideias em ação.</strong>.
           </Text_body_base>
-          <Text_link
-            href={"/documents/Regras do Programa CREA Jovem 2025.pdf"}
-            className={"flex items-center gap-3"}
-          >
-            <span className="underline underline-offset-2">
-              Acesse aqui o regulamento
-            </span>
-            <ArrowTopRightOnSquareIcon className="size-5" />
-          </Text_link>
+          <p>Estudantes de Engenharia, Agronomia e Geociências encontram aqui um espaço de aprendizado prático, conexão com o mercado e desenvolvimento de liderança. Prepare-se para atuar com mais confiança, ética e visão de futuro!</p>
         </div>
         <div className="space-y-3">
-          <Text_head_4
-            className={
-              "font-bold text-creajovem-blue-400 dark:text-creajovem-green-500"
-            }
-          >
-            Quem pode participar?
-          </Text_head_4>
-          <Text_body_base>
-            Para profissionais recém-graduados e com até cinco anos de formação
-            nas áreas abrangidas pelo Sistema Confea/Crea, com registro regular
-            no CREA-SC.
-          </Text_body_base>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-creajovem-blue-50 dark:bg-creajovem-blue-950 border border-creajovem-blue-200 dark:border-creajovem-blue-800 rounded-xl p-6 text-center shadow-sm">
+              <div className="flex justify-center mb-4">
+                <Icon_Comunidade />
+              </div>
+              <h3 className="text-creajovem-blue-500 font-bold text-lg mb-2">Comunidade Profissional</h3>
+              <p className="text-creajovem-blue-800 dark:text-white text-sm">
+                Engajar os acadêmicos no <strong>Sistema Confea/Crea</strong> com debates, integração às <strong>Entidades de Classe</strong>, fortalecendo o aprendizado técnico.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-creajovem-blue-50 dark:bg-creajovem-blue-950 border border-creajovem-blue-200 dark:border-creajovem-blue-800 rounded-xl p-6 text-center shadow-sm">
+              <div className="flex justify-center mb-4">
+                <Icon_Desenvolvimento />
+              </div>
+              <h3 className="text-creajovem-blue-500 font-bold text-lg mb-2">Desenvolvimento Pessoal e Profissional</h3>
+              <p className="text-creajovem-blue-800 dark:text-white text-sm">
+                Aproximar os acadêmicos ao mercado de trabalho com <strong>visitas técnicas, treinamentos</strong> e ferramentas, proporcionando vivências e <strong>aprendizado contínuo</strong>.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-creajovem-blue-50 dark:bg-creajovem-blue-950 border border-creajovem-blue-200 dark:border-creajovem-blue-800 rounded-xl p-6 text-center shadow-sm">
+              <div className="flex justify-center mb-4">
+                <Icon_Oportunidade />
+              </div>              
+              <h3 className="text-creajovem-blue-500 font-bold text-lg mb-2">Oportunidade no Mercado de Trabalho</h3>
+              <p className="text-creajovem-blue-800 dark:text-white text-sm">
+                Conectar os acadêmicos ao mercado profissional com <strong>experiências práticas e estágios</strong>, através de conexões com empresas.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </Container>

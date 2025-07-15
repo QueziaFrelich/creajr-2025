@@ -23,7 +23,7 @@ export default function SectionGalleryProjects({ sectionName, dataProjects }) {
             360: { slidesPerView: 1.2 },
             640: { slidesPerView: 1.5 },
             768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 4.2 },
           }}
           className="w-full lg:-translate-y-10"
         >

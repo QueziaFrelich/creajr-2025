@@ -187,9 +187,8 @@ export default function CardProject({
                                 ? `/${encodeURI(item.company.name)}`
                                 : "")
                             }
-                            className={`flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all ${
-                              !item.active && "cursor-not-allowed"
-                            }`}
+                            className={`flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all ${!item.active && "cursor-not-allowed"
+                              }`}
                           >
                             {/* image */}
                             {item.image && (
@@ -203,9 +202,8 @@ export default function CardProject({
 
                             {/* title, tags and description */}
                             <div
-                              className={`flex flex-col ${
-                                item.image ? "p-5" : "p-2"
-                              }`}
+                              className={`flex flex-col ${item.image ? "p-5" : "p-2"
+                                }`}
                             >
                               {/* Title and tags */}
                               <div className="space-y-3">
@@ -226,18 +224,22 @@ export default function CardProject({
                                     {item.tags.date.length > 0 &&
                                       item.tags.date.map((date, index) => (
                                         <TagBase
-                                          key={index}
+                                          key={`date-${index}`}
                                           className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
                                         >
                                           {date}
                                         </TagBase>
                                       ))}
 
-                                    {item.tags.region && (
-                                      <TagBase className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium">
-                                        {item.tags.region}
-                                      </TagBase>
-                                    )}
+                                    {item.tags.region?.length > 0 &&
+                                      item.tags.region.map((regionTag, index) => (
+                                        <TagBase
+                                          key={`region-${index}`}
+                                          className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
+                                        >
+                                          {regionTag}
+                                        </TagBase>
+                                      ))}
                                   </div>
                                 )}
                               </div>

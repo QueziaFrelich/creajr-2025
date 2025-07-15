@@ -5,9 +5,9 @@ import { Providers } from "./providers";
 import Footer from "./ui/components/footer/footer";
 
 export const metadata = {
-  title: "Crea Jovem",
+  title: "CreaJr",
   description:
-    "O objetivo do Crea Jovem é impulsionar e fortalecer jovens talentos, oferecendo capacitação contínua, acesso ao mercado de trabalho, estímulo à inovação, empreendedorismo e liderança.",
+    "O CREA Jr-SC promove a integração e o desenvolvimento de futuros profissionais das áreas de engenharia, agronomia e geociências, ...",
 };
 
 const montserrat = Montserrat({

@@ -1,3 +1,5 @@
+import { modal } from "@nextui-org/react";
+
 export const dataProjects = [
   // Template
   {
@@ -61,11 +63,11 @@ export const dataProjects = [
 
   // Mercado de Trabalho
   {
-    name: "Oportunidades de emprego",
+    name: "Oportunidades de trabalho",
     category: "Mercado de Trabalho",
     image: "/projects/oportunidades-de-emprego.jpg",
     summary:
-      "Conectamos você às melhores oportunidades no mercado por meio de vagas identificadas pelo CREA-SC e cadastradas pelas empresas registradas!",
+      "Encontre vagas de estágio, trainee e emprego que combinam com seu perfil profissional.",
     button: {
       type: "link",
       text: "Conferir oportunidades",
@@ -78,7 +80,7 @@ export const dataProjects = [
     category: "Mercado de Trabalho",
     image: "/projects/desafios-publicos-e-privados.jpg",
     summary:
-      "Participe de hackathons e competições para resolver desafios reais das áreas do Crea. Conquiste prêmios, desenvolva seu projeto e conecte-se a investidores!",
+      "Participe de competições que conectam inovação e soluções para o mundo real.",
     button: {
       type: null,
       text: "",
@@ -89,110 +91,37 @@ export const dataProjects = [
 
   // Desenvolvimento Profissional
   {
-    name: "Circuito de Palestras",
+    name: "Talks Profissionais",
     category: "Desenvolvimento Profissional",
     image: "/projects/circuito-de-palestras.jpg",
     summary:
-      "Participe de palestras e eventos exclusivos que conectam você a empresas, desenvolvem habilidades e preparam para o mercado com conteúdos inovadores e networking estratégico!",
+      "Conecte-se com especialistas e amplie sua visão sobre o mercado e sua carreira.",
     button: {
-      type: "modal",
-      text: "Ver detalhes",
+      type: null,
+      text: "",
       href: "#",
     },
-    modal: {
-      description: `Venha se preparar para o mercado com simulações de entrevistas, conexões estratégicas com empresas e networking em eventos focados em inovações e tendências do setor.
-Participe de trilhas de aprendizado práticas, desenvolva habilidades técnicas e interpessoais, como liderança e comunicação, e amplie suas oportunidades profissionais.
-Descubra como o Sistema Confea/Crea funciona, fortaleça sua profissão com conhecimento e protagonismo, e faça parte de uma geração que transforma o mercado!`,
-      list: {
-        title: "Eventos",
-        download: null,
-        items: [
-          {
-            active: true,
-            image: "/projects/head-energia/banner.png",
-            title:
-              "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
-            description: `O SOON é um curso gratuito, desenvolvido em parceria com a Head Energia, exclusivo para registrados no CREA-SC. Nesta formação, você explorará o Setor Elétrico e suas inúmeras oportunidades de atuação, tanto diretamente na Engenharia quanto em áreas relacionadas. Serão 4 aulas ao vivo, online, realizadas todas as segundas-feiras de fevereiro de 2025, sempre às 19h07. Não perca! Clique aqui e descubra mais sobre essa oportunidade única.`,
-            tags: {
-              project:
-                "SOON - Setor Elétrico: Oportunidades e Orientações para a Nova Geração",
-              date: ["03/02/2025", "10/02/2025", "17/02/2025", "24/02/2025"],
-              hour: "19:00h",
-              region: null,
-            },
-            href: "/circuito-de-palestras",
-            gallery: [],
-            testimonials: [],
-            company: {
-              name: "Head Energia",
-              logo: "/projects/head-energia/logotipo.png",
-              description:
-                "A Head Energia é a plataforma on-line para você avançar na sua carreira no Setor Elétrico. Nosso portfólio completo de capacitação é a ponte para você entender e aumentar sua relevância no mundo corporativo. Nossa comunidade fortalecerá seu networking com os profissionais mais atuantes e comprometidos do setor, de estagiários a CEOs de multinacionais.",
-              socialmedia: {
-                instagram: "https://www.instagram.com/head.energia/", // IMPORTANT: Always we need to put "https://"
-                linkedin: "https://www.linkedin.com/school/head-energia/", // IMPORTANT: Always we need to put "https://"
-              },
-              contact: {
-                address: "Online pelo Zoom",
-                website: "https://www.headenergia.net", // IMPORTANT: Always we need to put "https://"
-              },
-            },
-          },
-        ],
-      },
-    },
+    modal: null,
   },
   {
-    name: "Visitas Técnicas",
+    name: "Imersões Técnicas",
     category: "Desenvolvimento Profissional",
     image: "/projects/visitas-tecnicas.jpg",
     summary:
-      "Participe de visitas técnicas, mesas-redondas com líderes e reuniões nas Entidades de Classe. Conecte-se, aprenda na prática e contribua para o futuro da sua profissão!",
+      "Conheça na prática o dia a dia de empresas e obras da sua futura profissão.",
     button: {
-      type: "modal",
-      text: "Ver detalhes",
+      type: null,
+      text: "",
       href: "#",
     },
-    modal: {
-      description: `Descubra o mercado na prática com visitas técnicas a empresas, obras e serviços, conhecendo de perto operações e inovações que fazem a diferença no setor.
-Participe de mesas-redondas com líderes do sistema e das Entidades de Classe, conecte-se a profissionais influentes e saiba como contribuir para o avanço da sua profissão.
-Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja protagonista nas decisões que moldam o futuro da profissão e fortalecem o sistema!`,
-      list: {
-        title: "Visitas",
-        download: null,
-        items: [
-          {
-            active: false,
-            image: "",
-            title: "Em breve",
-            description: `A nossa próxima visita está programada para março de 2025. Fique atento para mais informações!`,
-            tags: {
-              project: "",
-              date: [],
-              hour: "",
-              region: "Regional de Florianópolis",
-            },
-            href: "#",
-            gallery: ["", "", ""],
-            testimonials: [{ name: "", text: "" }],
-            company: {
-              name: "",
-              logo: "",
-              description: "",
-              socialmedia: { instagram: "", linkedin: "" }, // IMPORTANT: Always we need to put "https://" in the URL
-              contact: { address: "", website: "" }, // IMPORTANT: Always we need to put "https://" in the URL
-            },
-          },
-        ],
-      },
-    },
+    modal: null,
   },
   {
-    name: "Mentorias",
+    name: "Mentorias de Carreira",
     category: "Desenvolvimento Profissional",
     image: "/projects/mentorias.jpg",
     summary:
-      "Conecte-se a mentores experientes que oferecem orientação personalizada em carreira, gestão, inovação e desafios do setor, impulsionando seu crescimento profissional!",
+      "Tenha o apoio de profissionais experientes para planejar sua trajetória com mais clareza.",
     button: {
       type: null,
       text: "Ver mentores",
@@ -201,11 +130,24 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     modal: null,
   },
   {
-    name: "Formação em Novas Habilidades",
+    name: "Habilidades do Futuro",
     category: "Desenvolvimento Profissional",
     image: "/projects/formacao-em-novas-habilidades.jpg",
     summary:
-      "Desenvolva novas habilidades técnicas e amplie suas oportunidades de atuação no mercado de trabalho!",
+      "Desenvolva as competências exigidas pelos profissionais mais preparados do mercado.",
+    button: {
+      type: null,
+      text: "",
+      href: "",
+    },
+    modal: null,
+  },
+  {
+    name: "Vitrine Acadêmica",
+    category: "Desenvolvimento Profissional",
+    image: "/projects/vitrine-academica.png",
+    summary:
+      "Conheça os Times de Competição e Startups jr. do programa CREA jr-SC.",
     button: {
       type: null,
       text: "",
@@ -220,7 +162,7 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     category: "Formação de Empreendedores",
     image: "/projects/formacao-de-empreendedores.jpg",
     summary:
-      "Desenvolva novas habilidades técnicas e amplie suas oportunidades de atuação no mercado de trabalho!",
+      "Desperte seu perfil empreendedor e transforme ideias em projetos com propósito.",
     button: {
       type: null,
       text: "",
@@ -229,11 +171,11 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     modal: null,
   },
   {
-    name: "Validação de Negócio",
+    name: "Valide sua Ideia",
     category: "Formação de Empreendedores",
     image: "/projects/validacao-de-negocio.jpg",
     summary:
-      "Transforme sua ideia em realidade com uma trilha completa: da ideação à validação! Participe de workshops, conecte-se a investidores, incubadoras e aceleradoras!",
+      "Teste, aprimore e comprove seu modelo de negócio com apoio e ferramentas práticas.",
     button: {
       type: null,
       text: "",
@@ -248,15 +190,14 @@ Engaje-se nas reuniões das Entidades de Classe, compartilhe ideias e seja prota
     category: "Comunidade Profissional",
     image: "/projects/sistema-profissional.jpg",
     summary:
-      "Explore o Sistema Confea/Crea com um guia prático que explica suas responsabilidades e como você, jovem profissional, pode participar e influenciar positivamente sua profissão!",
+      "Descubra o que é o Confea, o Crea-SC, as Entidades de Classe e a Mútua.",
     button: {
-      type: null,
+      type: "modal",
       text: "Ver detalhes",
       href: "#",
     },
     modal: {
-      description: `Conecte-se ao Sistema Confea/Crea! Entenda sua estrutura, funções e participe ativamente para fortalecer o Conselho. Aprenda sobre legislação, ética e valorização profissional enquanto se integra às Entidades de Classe. 
-Transforme conhecimento em impacto!`,
+      description: `Descubra o que é o Confea, o Crea-SC, as Entidades de Classe e a Mútua.`,
       list: {
         title: "Vídeos",
         download:
@@ -336,9 +277,9 @@ Transforme conhecimento em impacto!`,
     },
   },
   {
-    name: "Comunidade Profissional",
+    name: "Rede Profissional",
     category: "Comunidade Profissional",
-    image: "/projects/comunidade-profissional.jpg",
+    image: "/projects/rede-profissional.png",
     summary:
       "Participe de fóruns online e grupos de discussão para compartilhar ideias, melhorar o sistema e engajar-se em iniciativas de crescimento e inovação na sua profissão!",
     button: {
@@ -347,5 +288,141 @@ Transforme conhecimento em impacto!`,
       href: "#",
     },
     modal: null,
+  },
+  {
+    name: "Comunidade Profissional",
+    category: "Comunidade Profissional",
+    image: "/projects/formacao-de-dirigentes.png",
+    summary:
+      "Participe de fóruns online e grupos de discussão para compartilhar ideias, melhorar o sistema e engajar-se em iniciativas de crescimento e inovação na sua profissão!",
+    button: {
+      type: "modal",
+      text: "Ver detalhes",
+      href: "#",
+    },
+    modal: {
+      description: `Para líderes do CREA Jr-SC, a trilha foca em soft skills e gestão, preparando-os para o mercado. A Formação de Dirigentes do CREA Jr-SC é voltada para membros que exercem funções de liderança dentro do programa. A trilha busca fortalecer 
+      habilidades socioemocionais, comunicação, gestão de equipes e visão sistêmica, preparando os jovens para os desafios reais do mercado de trabalho. Confira o Regimento Interno para conhecer todas as diretrizes do CREA Jr-SC.`,
+      list: {
+        title: "Cargos",
+        download: null,
+        items: [
+          {
+            active: false,
+            image: "",
+            title: "Coordenador Estadual Titular",
+            description: `Lidere em nível estadual. Seja a voz da rede CREA Jr-SC em Santa Catarina. Coordene ações, represente o programa em eventos e conduza o time rumo ao impacto real.`,
+            tags: {
+              project: "",
+              date: [],
+              hour: "",
+              region: [
+                "Liderança Estratégica",
+                "Gestão De Equipes",
+                "Visão Sistêmica",
+                "Articulação Institucional",
+                "Planejamento"
+              ]
+            },
+            href: "#",
+            gallery: ["", "", ""],
+            testimonials: [{ name: "", text: "" }],
+            company: {
+              name: "",
+              logo: "",
+              description: "",
+              socialmedia: { instagram: "", linkedin: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+              contact: { address: "", website: "" }, // IMPORTANT: Always we need to put "https://" in the URL
+            },
+          },
+        ],
+      },
+    },
+  },
+
+  // Outros Benefícios
+  {
+    name: "Capacitação",
+    category: "Outros Benefícios",
+    image: "/projects/capacitacao.jpg",
+    summary:
+      `Aprenda, evolua e se destaque! Quem é CREA Jr-SC tem acesso a cursos, trilhas, workshops e benefícios que preparam você pra encarar o mercado e crescer na carreira.`,
+    button: {
+      type: null,
+      text: "",
+      href: "#",
+    },
+    modal: null,
+  },
+  {
+    name: "Ferramentas profissionais",
+    category: "Outros Benefícios",
+    image: "/projects/ferramentas-profissionais.png",
+    summary:
+      "Ferramentas que aceleram sua jornada! Coworkings, simulador de ART, ferramentas digitais e muito mais pra você aprender, crescer e se conectar com o mercado desde já.",
+    button: {
+      type: null,
+      text: "",
+      href: "#",
+    },
+    modal: null,
+  },
+  {
+    name: "Financeiro",
+    category: "Outros Benefícios",
+    image: "/projects/financeiro.png",
+    summary:
+      "Seu dinheiro vale mais aqui! No CREA Jr-SC você tem acesso a descontos, cashback, cooperativa de crédito e benefícios que ajudam no seu crescimento sem pesar no bolso.",
+    button: {
+      type: null,
+      text: "",
+      href: "#",
+    },
+    modal: null,
+  },
+  {
+    name: "Saúde",
+    category: "Outros Benefícios",
+    image: "/projects/saude.png",
+    summary:
+      "Cuidar de você também faz parte da jornada!Membros do CREA Jr-SC têm acesso a plano de saúde com cobertura nacional e descontos de até 25% pra viver com mais segurança e qualidade.",
+    button: {
+      type: "modal",
+      text: "Ver detalhes",
+      href: "#",
+    },
+    modal: {
+      description: `Cuidar de você também faz parte da jornada!Membros do CREA Jr-SC têm acesso a plano de saúde com cobertura nacional e descontos de até 25% pra viver com mais segurança e qualidade.`,
+      list: {
+        title: "Benefícios",
+        download:
+          "https://www.renfe.com/content/dam/renfe/es/General/PDF-y-otros/Ejemplo-de-descarga-pdf.pdf",
+        items: [
+          {
+            active: true,
+            image:
+              "/projects/list/sistema-profissional/entidades-de-classe.jpg",
+            title: "UNIMED",
+            description: `Plano de saúde que oferece abrangência nacional, cobertura completa nas segmentações com descontos de até 25% nas mensalidades para membros do CREA Jr-SC.`,
+            tags: {
+              project: "",
+              date: [],
+              hour: "",
+              region: ["Benefício Estadual"],
+            },
+            href: "#",
+            gallery: [],
+            testimonials: [],
+            company: {
+              name: "",
+              logo: "",
+              description: "",
+              socialmedia: { instagram: "", linkedin: "" },
+              contact: { address: "", website: "" },
+            },
+          },
+        ],
+      },
+    },
   },
 ];

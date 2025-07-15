@@ -18,13 +18,13 @@ const slides = [
   },
   {
     title: "Slide",
-    src: "/banners/banner-3.png",
-    responsive: "/banners/banner-3-responsive.png",
+    src: "/banners/banner-1.png",
+    responsive: "/banners/banner-1-responsive.png",
   },
   {
     title: "Slide",
-    src: "/banners/banner-4.png",
-    responsive: "/banners/banner-4-responsive.png",
+    src: "/banners/banner-2.png",
+    responsive: "/banners/banner-2-responsive.png",
   },
 ];
 
