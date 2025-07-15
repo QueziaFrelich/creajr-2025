@@ -16,7 +16,7 @@ import Icon_link from "../../icons/footer/link";
 
 export default function Footer() {
   return (
-    <section className="bg-creajovem-blue-500 text-white py-16">
+    <section className="bg-creajr-blue-500 text-white py-16">
       <Container className="flex flex-col md:flex-row justify-between gap-12 text-sm">
         {/* Coluna 1: Logos + ícones sociais */}
         <div className="space-y-5 max-w-xs">

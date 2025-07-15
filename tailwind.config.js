@@ -28,10 +28,7 @@ module.exports = {
       red: colors.red,
       yellow: colors.amber,
       blue: colors.blue,
-      "creajovem-green": {
-        500: "#CFE533",
-      },
-      "creajovem-blue": {
+      "creajr-blue": {
         100: "#E5F2FF",
         400: "#202AE9",
         500: "#2387D8",
@@ -39,6 +36,11 @@ module.exports = {
         700: "#02076B",
         900: "#001C39",
         1000: "#010326",
+      },
+      "creajr-pink": {
+        100: "#FF9DAD",
+        400: "#F3516C",
+        500: "#E32646",
       },
     },
   },

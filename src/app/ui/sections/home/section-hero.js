@@ -103,8 +103,8 @@ export default function SectionHero() {
                 key={index}
                 className={`w-[10%] h-1 ${
                   index === activeIndex
-                    ? "bg-creajovem-blue-400 dark:bg-white"
-                    : "bg-creajovem-blue-500/20 dark:bg-white/20"
+                    ? "bg-creajr-blue-400 dark:bg-white"
+                    : "bg-creajr-blue-500/20 dark:bg-white/20"
                 }`}
                 onClick={() => scrollTo(index)}
               />
@@ -114,13 +114,13 @@ export default function SectionHero() {
           {/* Navigation Buttons */}
           <div className="px-4 flex gap-5 items-center">
             <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={scrollPrev}
             >
               <ChevronLeftIcon className="size-4" />
             </button>
             <button
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
               onClick={scrollNext}
             >
               <ChevronRightIcon className="size-4" />

@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt" className="bg-white dark:bg-creajovem-blue-1000">
+    <html lang="pt" className="bg-white dark:bg-creajr-blue-1000">
       <body className={`scroll-smooth ${montserrat.className}`}>
         <Providers>
           <Header />

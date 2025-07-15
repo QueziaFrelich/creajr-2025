@@ -76,7 +76,7 @@ export default function SectionMentores() {
                 className={
                   openBox === index
                     ? "hidden"
-                    : "absolute bottom-0 p-5 h-full flex flex-col justify-end text-center bg-gradient-to-b from-40% from-creajovem-blue-500/0 to-creajovem-blue-500/80 w-full text-white"
+                    : "absolute bottom-0 p-5 h-full flex flex-col justify-end text-center bg-gradient-to-b from-40% from-creajr-blue-500/0 to-creajr-blue-500/80 w-full text-white"
                 }
               >
                 <div>
@@ -85,7 +85,7 @@ export default function SectionMentores() {
                   </Text_head_3>
                   <p className={"text-xs"}>{palestrante.position}</p>
                 </div>
-                <button className="bg-creajovem-blue-500 text-white rounded-full absolute top-2 right-2 w-5 group-hover:w-20 h-5 text-xs transition-all">
+                <button className="bg-creajr-blue-500 text-white rounded-full absolute top-2 right-2 w-5 group-hover:w-20 h-5 text-xs transition-all">
                   <span className="block group-hover:hidden">+</span>
                   <span className="hidden group-hover:block">Ver mais</span>
                 </button>

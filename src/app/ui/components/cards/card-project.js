@@ -54,7 +54,7 @@ export default function CardProject({
   return (
     <>
       {/* Card section */}
-      <div className="max-w-96 min-h-44 p-2 hover:pb-5 text-creajovem-blue-500 dark:text-white bg-creajovem-blue-100  dark:bg-creajovem-blue-900 dark:hover:bg-creajovem-blue-600 rounded-xl space-y-3 group/card transition-all duration-500 ease-in-out hover:opacity-100">
+      <div className="max-w-96 min-h-44 p-2 hover:pb-5 text-creajr-blue-500 dark:text-white bg-creajr-blue-100  dark:bg-creajr-blue-900 dark:hover:bg-creajr-blue-600 rounded-xl space-y-3 group/card transition-all duration-500 ease-in-out hover:opacity-100">
         <div
           style={{ backgroundImage: `url('${image}')` }}
           className="h-24 w-full bg-cover bg-center rounded-t-md"
@@ -70,7 +70,7 @@ export default function CardProject({
                 href={button.href}
                 text={button.text}
                 icon={<ChevronRightIcon className="size-4" />}
-                className="rounded-full py-1 px-3 mt-5 bg-creajovem-blue-500/5 dark:bg-white/5 hover:bg-creajovem-green-500 dark:hover:bg-white/20 border-creajovem-blue-500 dark:border-white transition-all"
+                className="rounded-full py-1 px-3 mt-5 bg-creajr-blue-500/5 dark:bg-white/5 hover:bg-creajovem-green-500 dark:hover:bg-white/20 border-creajr-blue-500 dark:border-white transition-all"
               />
             )}
 
@@ -79,7 +79,7 @@ export default function CardProject({
                 onClick={onOpen}
                 text={button.text}
                 icon={<ChevronRightIcon className="size-4" />}
-                className="rounded-full py-1 px-3 mt-5 bg-creajovem-blue-500/5 dark:bg-white/5 hover:bg-creajovem-green-500 dark:hover:bg-white/20 border-creajovem-blue-500 dark:border-white transition-all"
+                className="rounded-full py-1 px-3 mt-5 bg-creajr-blue-500/5 dark:bg-white/5 hover:bg-creajovem-green-500 dark:hover:bg-white/20 border-creajr-blue-500 dark:border-white transition-all"
               />
             )}
           </div>
@@ -97,10 +97,10 @@ export default function CardProject({
           scrollBehavior="outside"
           classNames={{
             closeButton:
-              "bg-white hover:bg-creajovem-green-500 text-creajovem-blue-900 transition-all p-2 rounded-full",
+              "bg-white hover:bg-creajovem-green-500 text-creajr-blue-900 transition-all p-2 rounded-full",
           }}
         >
-          <ModalContent className="bg-white dark:bg-creajovem-blue-600 text-creajovem-blue-500 dark:text-white">
+          <ModalContent className="bg-white dark:bg-creajr-blue-600 text-creajr-blue-500 dark:text-white">
             <>
               <ModalHeader className="flex flex-col gap-5 p-4">
                 {/* image */}
@@ -110,7 +110,7 @@ export default function CardProject({
                 ></div>
                 <div className="space-y-2">
                   {/* tittle */}
-                  <Text_head_2 className="font-semibold text-creajovem-blue-400 dark:text-white">
+                  <Text_head_2 className="font-semibold text-creajr-blue-400 dark:text-white">
                     {title}
                   </Text_head_2>
 
@@ -135,7 +135,7 @@ export default function CardProject({
                   <Text_decoration_border>
                     <Text_head_4
                       className={
-                        "font-extrabold text-creajovem-blue-400 dark:text-white"
+                        "font-extrabold text-creajr-blue-400 dark:text-white"
                       }
                     >
                       {modal.list.title}
@@ -148,7 +148,7 @@ export default function CardProject({
                       href={modal.list.download}
                       text={"Baixe o material em pdf"}
                       className={
-                        "items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 "
+                        "items-center rounded-full py-1 px-3 transition-all md:flex border border-creajr-blue-100 bg-creajr-blue-100/30 hover:bg-creajr-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 "
                       }
                       target={"_blank"}
                     ></Button_outline>
@@ -156,7 +156,7 @@ export default function CardProject({
                     <select
                       value={selectedYear}
                       onChange={(e) => setSelectedYear(e.target.value)}
-                      className="focus:text-creajovem-blue-600 focus:bg-creajovem-blue-100  items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10"
+                      className="focus:text-creajr-blue-600 focus:bg-creajr-blue-100  items-center rounded-full py-1 px-3 transition-all md:flex border border-creajr-blue-100 bg-creajr-blue-100/30 hover:bg-creajr-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10"
                     >
                       <option value="">Todos os anos</option>
                       {years.map((year) => (
@@ -187,7 +187,7 @@ export default function CardProject({
                                 ? `/${encodeURI(item.company.name)}`
                                 : "")
                             }
-                            className={`flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajovem-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all ${!item.active && "cursor-not-allowed"
+                            className={`flex flex-col md:flex-row items-start md:items-center justify-between p-2 hover:bg-creajr-blue-100/30 dark:hover:bg-white/10 rounded-lg transition-all ${!item.active && "cursor-not-allowed"
                               }`}
                           >
                             {/* image */}
@@ -225,7 +225,7 @@ export default function CardProject({
                                       item.tags.date.map((date, index) => (
                                         <TagBase
                                           key={`date-${index}`}
-                                          className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
+                                          className="py-1 text-xs border border-creajr-blue-100 bg-creajr-blue-100/30 dark:bg-white/20 font-medium"
                                         >
                                           {date}
                                         </TagBase>
@@ -235,7 +235,7 @@ export default function CardProject({
                                       item.tags.region.map((regionTag, index) => (
                                         <TagBase
                                           key={`region-${index}`}
-                                          className="py-1 text-xs border border-creajovem-blue-100 bg-creajovem-blue-100/30 dark:bg-white/20 font-medium"
+                                          className="py-1 text-xs border border-creajr-blue-100 bg-creajr-blue-100/30 dark:bg-white/20 font-medium"
                                         >
                                           {regionTag}
                                         </TagBase>

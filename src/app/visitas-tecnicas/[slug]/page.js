@@ -43,7 +43,7 @@ export default function LayoutVisitas({}) {
     return (
       <Container
         className={
-          "space-y-20 py-20 min-h-96 text-creajovem-blue-500 dark:text-white"
+          "space-y-20 py-20 min-h-96 text-creajr-blue-500 dark:text-white"
         }
       >
         <Text_head_1 className={"mb-5"}>Projeto não encontrado</Text_head_1>
@@ -51,7 +51,7 @@ export default function LayoutVisitas({}) {
           href={"/"}
           text={"Voltar para a página inicial"}
           className={
-            "items-center rounded-full py-1 px-3 transition-all md:flex border border-creajovem-blue-100 bg-creajovem-blue-100/30 hover:bg-creajovem-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 "
+            "items-center rounded-full py-1 px-3 transition-all md:flex border border-creajr-blue-100 bg-creajr-blue-100/30 hover:bg-creajr-blue-100/10 dark:bg-white/20 dark:hover:bg-white/10 "
           }
         ></Button_outline>
       </Container>
@@ -59,7 +59,7 @@ export default function LayoutVisitas({}) {
 
   return (
     <Container
-      className={"space-y-20 py-20 text-creajovem-blue-500 dark:text-white"}
+      className={"space-y-20 py-20 text-creajr-blue-500 dark:text-white"}
     >
       {/* About */}
       <section className="space-y-5">
@@ -133,20 +133,20 @@ export default function LayoutVisitas({}) {
       {selectProject.gallery.length > 0 && (
         <section className="space-y-5">
           <div className="flex justify-between items-center">
-            <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
+            <Text_head_3 className="font-bold text-creajr-blue-500 dark:text-creajovem-green-500">
               Galeria de fotos
             </Text_head_3>
 
             {/* Navigation Buttons */}
             <div className="px-4 flex gap-5 items-center">
               <button
-                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperGalleryRef.current?.slidePrev()}
               >
                 <ChevronLeftIcon className="size-4" />
               </button>
               <button
-                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperGalleryRef.current?.slideNext()}
               >
                 <ChevronRightIcon className="size-4" />
@@ -185,20 +185,20 @@ export default function LayoutVisitas({}) {
       {selectProject.testimonials.length > 0 && (
         <section className="space-y-5">
           <div className="flex justify-between items-center">
-            <Text_head_3 className="font-bold text-creajovem-blue-500 dark:text-creajovem-green-500">
+            <Text_head_3 className="font-bold text-creajr-blue-500 dark:text-creajovem-green-500">
               Depoimentos
             </Text_head_3>
 
             {/* Navigation Buttons */}
             <div className="px-4 flex gap-5 items-center">
               <button
-                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperTestimonialRef.current?.slidePrev()}
               >
                 <ChevronLeftIcon className="size-4" />
               </button>
               <button
-                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajovem-blue-500 dark:border-white text-creajovem-blue-500 dark:text-white hover:text-creajovem-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-creajr-blue-500 dark:border-white text-creajr-blue-500 dark:text-white hover:text-creajr-blue-500 hover:border-2 hover:border-creajovem-green-500 hover:bg-creajovem-green-500 transition-all"
                 onClick={() => swiperTestimonialRef.current?.slideNext()}
               >
                 <ChevronRightIcon className="size-4" />

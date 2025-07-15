@@ -6,7 +6,7 @@ export default function SectionPartnership() {
  return (
     <section className="bg-white px-20 py-16">
         <div className="container mx-auto px-4 md:px-6 xl:px-8">
-        <h2 className="text-2xl md:text-4xl font-bold text-creajovem-blue-500 mb-4">
+        <h2 className="text-2xl md:text-4xl font-bold text-creajr-blue-500 mb-4">
           Como funciona a parceria com sua Instituição?
         </h2>
         <p className="mb-12 text-lg md:text-xl">

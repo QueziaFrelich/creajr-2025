@@ -13,7 +13,7 @@ export default function SectionGalleryProjects({ sectionName, dataProjects }) {
   return (
     <section className="py-5">
       <Container>
-        <Text_head_2 className="mb-5 md:mb-0 font-bold text-creajovem-blue-400 dark:text-creajovem-green-500">
+        <Text_head_2 className="mb-5 md:mb-0 font-bold text-creajr-blue-400 dark:text-creajovem-green-500">
           {sectionName}
         </Text_head_2>
 

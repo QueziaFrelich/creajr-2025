@@ -69,18 +69,18 @@ export default function Header() {
             <Button_outline
               text="Para Instituições de Ensino"
               href="/instituicoes"
-              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajovem-blue-500 transition-all"
+              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajr-blue-500 transition-all"
             />
             <Button_outline
               text="Quero Participar"
               href="#"
-              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajovem-blue-500 transition-all"
+              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajr-blue-500 transition-all"
             />
             <Link
               href="https://www.creajr-sc.org.br/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-creajovem-blue-500 font-semibold rounded-full py-2 px-4 hover:opacity-90 transition-all"
+              className="bg-white text-creajr-blue-500 font-semibold rounded-full py-2 px-4 hover:opacity-90 transition-all"
             >
               Fazer login
             </Link>
@@ -93,16 +93,16 @@ export default function Header() {
             <Button_outline
               text="Para Instituições de Ensino"
               href="#"
-              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajovem-blue-500 transition-all"
+              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajr-blue-500 transition-all"
             />
             <Button_outline
               text="Quero Participar"
               href="#"
-              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajovem-blue-500 transition-all"
+              className="rounded-full py-2 px-4 text-white border-white hover:bg-white hover:text-creajr-blue-500 transition-all"
             />
             <Link
               href="#"
-              className="bg-white text-creajovem-blue-500 font-semibold rounded-full py-2 px-4 hover:opacity-90 transition-all text-center"
+              className="bg-white text-creajr-blue-500 font-semibold rounded-full py-2 px-4 hover:opacity-90 transition-all text-center"
             >
               Fazer login
             </Link>
