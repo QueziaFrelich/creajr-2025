@@ -1,3 +1,5 @@
+import { Instagram } from "lucide-react";
+
 export const data_empresas_expositoras = [
   {
     NomeDaEmpresa: "Dotse Software Engineering",
@@ -5,6 +7,8 @@ export const data_empresas_expositoras = [
     Image:
       "/empresas-expositoras-2024/empresas-manufatura/dotse-software-engineering.png",
     Site: "https://dotse.com.br/",
+    Instagram: null,
+    Linkedin: null,
     Bio: "Empresa de engenharia de software com soluções especialistas para Saúde e Segurança no Trabalho.",
   },
   {
