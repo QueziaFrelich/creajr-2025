@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://backhml.linquei.com/v1',
+  baseURL: 'https://back.linquei.com/v1',
 })
 
 api.interceptors.request.use((config) => {

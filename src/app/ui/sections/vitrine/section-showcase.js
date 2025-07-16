@@ -14,8 +14,8 @@ export default function Section_showcase() {
     const [filteredData, setFilteredData] = useState([]);
 
     //Chamada da API
-    const comunidadeId = 20;
-    const funcaoPaiId = undefined;
+    const comunidadeId = 23; //hml28
+    const funcaoPaiId = 6;
     const { data, isLoading, error } = useMembrosComunidade(comunidadeId, funcaoPaiId);
     console.log("data recebida:", data);
 

@@ -2,7 +2,7 @@
 import { useQuery } from '@tanstack/react-query'
 import api from '../services/api'
 
-const fetchParceiros = async (empresaId, comunidadeId) => {
+const fetchParceiros = async (comunidadeId, empresaId) => {
   const params = new URLSearchParams()
   if (empresaId) params.append('empresaId', String(empresaId))
   if (comunidadeId) params.append('comunidadeId', String(comunidadeId))

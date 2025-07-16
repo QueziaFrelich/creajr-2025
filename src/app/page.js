@@ -1,4 +1,7 @@
+"use client"; // 🔥 necessário para usar hooks como useParceiros
+
 import Image from "next/image";
+import { useParceiros } from "./hooks/useParceiros";
 import SectionHero from "./ui/sections/home/section-hero";
 import SectionAbout from "./ui/sections/home/section-about";
 import SectionTestemonial from "./ui/sections/home/section-testimonials";
@@ -24,6 +27,13 @@ const outrosBefecios = dataProjects.filter(
 );
 
 export default function Home() {
+
+  const comunidadeId = 20;
+  const empresaId = undefined;
+  const { data, isLoading, error } = useParceiros(comunidadeId, empresaId);
+
+  console.log("data recebida:", data);
+
   return (
     <>
       <SectionHero />

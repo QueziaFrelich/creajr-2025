@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const login = async (username, password) => {
-  const response = await axios.post('https://backhml.linquei.com/v1/auth/login', {
+  const response = await axios.post('https://back.linquei.com/v1/auth/login', {
     username: 'adminexterno@gmail.com',
     password: 'a12345678.',
   })
