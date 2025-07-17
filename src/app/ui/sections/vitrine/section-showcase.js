@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Container from "../../components/container/container";
+import Text_head_3 from "../../components/text/text-head-3";
 import Text_head_2 from "../../components/text/text-head-2";
 import { ArrowRightIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import Button_outline from "../../components/buttons/button_outline";
+import Icon_instagram from "../../icons/footer/Instagram";
+import Icon_linkedin from "../../icons/footer/LinkedIn";
+import Icon_site from "../../icons/cards/icon-site";
 import { useMembrosComunidade } from "../../../hooks/useMembrosComunidade";
 
 export default function Section_showcase() {
@@ -31,18 +34,37 @@ export default function Section_showcase() {
             return item.membros.map((membro) => ({
                 NomeDaEmpresa: membro.nome || "Sem nome",
                 Tag: item.funcao?.nome || "Sem função",
+                Localizacao: membro.localizacao || "",
                 Image: membro.imagemPerfil || "/brand/placeholder.png",
                 Site: membro.site || "",
                 Bio: membro.sobre || "",
             }));
         });
-    })
+
+        setFilteredData(adaptado);
+    }, [data]);
 
     const categoriasUnicas = Array.from(
         new Set(
-            data?.map((item) => item.funcao.categoria).filter(Boolean)
+            data?.map((item) => item.funcao?.nome).filter(Boolean)
         )
     );
+
+    //índice de cores das tags
+    const tagColors = [
+        "bg-tag-100 text-tag-200",
+        "bg-tag-200 text-tag-400",
+        "bg-tag-300 text-tag-600",
+    ];
+
+    function getColorClassForTag(tag) {
+        let hash = 0;
+        for (let i = 0; i < tag.length; i++) {
+            hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        const index = Math.abs(hash) % tagColors.length;
+        return tagColors[index];
+    }
 
     //Filtro de busca + categoria
     const filteredResults = filteredData.filter((empresa) => {
@@ -95,7 +117,7 @@ export default function Section_showcase() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 ">
+                <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                     {filteredResults.map((empresa, index) => {
                         const isOpen = openBox === index;
 
@@ -103,54 +125,81 @@ export default function Section_showcase() {
                             <div
                                 key={index}
                                 onClick={() => handleOpenBox(index)}
-                                className={`group border-2 border-violet-crea-500 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer relative ${isOpen ? "col-span-2 xl:col-span-3 flex flex-col md:flex-row" : "col-span-1"
+                                className={`group min-h-[300px] rounded-lg transition-all duration-300 relative cursor-pointer overflow-hidden ${isOpen
+                                    ? "col-span-2 xl:col-span-3 border-2 border-violet-crea-600 flex"
+                                    : "col-span-1 border border-gray-300 max-w-60 mx-auto"
                                     }`}
                             >
-                                <div className={`${isOpen ? "w-full md:w-1/2 p-4" : ""}`}>
+                                {/* Imagem fechada */}
+                                <div className={`flex justify-center items-center ${isOpen ? "hidden md:flex" : "flex"}`}>
                                     <img
                                         src={empresa.Image}
                                         alt={empresa.NomeDaEmpresa}
-                                        onError={(e) => { e.target.src = "/placeholder.png" }}
-                                        className={`rounded-md w-full object-contain ${isOpen ? "max-h-64 hidden md:block" : "max-h-64"}`}
+                                        onError={(e) => {
+                                            e.target.src = "/placeholder.png";
+                                        }}
+                                        className="rounded-md max-h-64 max-w-50 object-contain"
                                     />
                                 </div>
 
+                                {/* Overlay quando fechado */}
                                 {!isOpen && (
-                                    <button className="bg-violet-crea-400 rounded-full absolute top-2 right-2 w-5 group-hover:w-20 h-5 text-xs transition-all overflow-hidden flex items-center justify-center px-1">
-                                        <span className="block group-hover:hidden">+</span>
-                                        <span className="hidden group-hover:block">Ver mais</span>
-                                    </button>
+                                    <div className="relative p-4 h-full flex flex-col justify-end">
+                                        <button className="bg-violet-crea-400 rounded-full absolute top-12 right-2 w-5 group-hover:w-20 h-5 text-xs transition-all bg-creajr-blue-500/50 text-white">
+                                            <span className="block group-hover:hidden">+</span>
+                                            <span className="hidden group-hover:block">Ver mais</span>
+                                        </button>
+                                    </div>
                                 )}
 
+
+                                {/* Expandido */}
                                 {isOpen && (
-                                    <div className="p-4 flex-1">
-                                        <div className="md:hidden mb-2">
+                                    <div className="p-5 flex-1 flex flex-col justify-between gap-3 w-full">
+                                        {/* Imagem no mobile */}
+                                        <div className="flex items-center gap-5">
                                             <img
                                                 src={empresa.Image}
                                                 alt={empresa.NomeDaEmpresa}
-                                                className="rounded-md max-h-20"
+                                                className="rounded-md max-h-20 md:hidden"
                                             />
-                                        </div>
-                                        {empresa.Bio && (
-                                            <p className="text-xs mb-2">{empresa.Bio}</p>
-                                        )}
-                                        {empresa.Site && (
-                                            <div className="mt-4 max-w-52">
-                                                <Button_outline
-                                                    href={empresa.Site}
-                                                    text={"Acessar site"}
-                                                    icon={<ArrowRightIcon className="size-5" />}
-                                                    className="items-center justify-between rounded-full py-2 px-5 transition-all flex bg-violet-crea-400 hover:bg-violet-crea-700 text-white text-sm"
-                                                    target={true}
-                                                />
+                                            <div>
+                                                <Text_head_3 className="font-bold">{empresa.NomeDaEmpresa}</Text_head_3>
+                                                <p className={`mt-1 text-xs font-medium px-2 py-1 rounded-full w-fit ${getColorClassForTag(empresa.Tag)}`}>
+                                                    {empresa.Tag}
+                                                </p>
+                                                {empresa.Localizacao && (
+                                                    <p className="mt-1 bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded-full w-fit">
+                                                        {empresa.Localizacao}
+                                                    </p>
+                                                )}
                                             </div>
+                                        </div>
+
+                                        {/* Bio */}
+                                        {empresa.Bio && (
+                                            <p className="text-xs mt-2 leading-relaxed">{empresa.Bio}</p>
                                         )}
+
+                                        {/* Ícones sociais */}
+                                        <div className="flex items-center justify-start gap-5 mt-2 text-[#16B469]">
+                                            {empresa.instagram && (
+                                                <Icon_instagram key={empresa.instagram} href={empresa.instagram} />
+                                            )}
+                                            {empresa.linkedin && (
+                                                <Icon_linkedin key={empresa.linkedin} href={empresa.linkedin} />
+                                            )}
+                                            {empresa.Site && (
+                                                <Icon_site key={empresa.Site} href={empresa.Site} />
+                                            )}
+                                        </div>
                                     </div>
                                 )}
                             </div>
                         );
                     })}
                 </div>
+
             </Container>
         </section>
     );

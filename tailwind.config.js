@@ -10,6 +10,14 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+   safelist: [
+    "bg-red-100", "text-red-800",
+    "bg-green-100", "text-green-800",
+    "bg-blue-100", "text-blue-800",
+    "bg-yellow-100", "text-yellow-800",
+    "bg-purple-100", "text-purple-800",
+    "bg-pink-100", "text-pink-800",
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -41,6 +49,14 @@ module.exports = {
         100: "#FF9DAD",
         400: "#F3516C",
         500: "#E32646",
+      },
+      "tag": {
+        100: "#8CF3C2",
+        100: "#0D5835",
+        300: "#C1EAFB",
+        100: "#0D2E58",
+        500: "#FFA6AF",
+        100: "#A12036",
       },
     },
   },
