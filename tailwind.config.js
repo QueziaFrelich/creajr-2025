@@ -36,6 +36,11 @@ module.exports = {
       red: colors.red,
       yellow: colors.amber,
       blue: colors.blue,
+      textDarkBlue: "#0D2E58",
+      textGreen: "#167146",
+      textDarkGreen: "#0D5835",
+      bgLightBlue: "#f3fafa",
+      bgBlue: "#C1EAFB",
       "creajr-blue": {
         100: "#E5F2FF",
         400: "#202AE9",

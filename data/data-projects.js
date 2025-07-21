@@ -348,22 +348,22 @@ export const dataProjects = [
     summary:
       `Aprenda, evolua e se destaque! Quem é CREA Jr-SC tem acesso a cursos, trilhas, workshops e benefícios que preparam você pra encarar o mercado e crescer na carreira.`,
     button: {
-      type: null,
-      text: "",
-      href: "#",
+      type: "link",
+      text:"Ver detalhes",
+      href: "/beneficios?c=5",
     },
     modal: null,
   },
   {
-    name: "Ferramentas profissionais",
+    name: "Ferramentas Digitais",
     category: "Outros Benefícios",
     image: "/projects/ferramentas-profissionais.png",
     summary:
       "Ferramentas que aceleram sua jornada! Coworkings, simulador de ART, ferramentas digitais e muito mais pra você aprender, crescer e se conectar com o mercado desde já.",
     button: {
-      type: null,
-      text: "",
-      href: "#",
+        type: "link",
+      text: "Ver detalhes",
+      href: "/beneficios?c=1",
     },
     modal: null,
   },
@@ -374,22 +374,22 @@ export const dataProjects = [
     summary:
       "Seu dinheiro vale mais aqui! No CREA Jr-SC você tem acesso a descontos, cashback, cooperativa de crédito e benefícios que ajudam no seu crescimento sem pesar no bolso.",
     button: {
-      type: null,
-      text: "",
-      href: "#",
+         type: "link",
+      text:"Ver detalhes",
+      href: "/beneficios?c=4",
     },
     modal: null,
   },
   {
-    name: "Saúde",
+    name: "Saúde e Qualidade de Vida",
     category: "Outros Benefícios",
     image: "/projects/saude.png",
     summary:
       "Cuidar de você também faz parte da jornada!Membros do CREA Jr-SC têm acesso a plano de saúde com cobertura nacional e descontos de até 25% pra viver com mais segurança e qualidade.",
     button: {
-      type: "modal",
+      type: "link",
       text: "Ver detalhes",
-      href: "#",
+      href: "/beneficios?c=2",
     },
     modal: {
       description: `Cuidar de você também faz parte da jornada!Membros do CREA Jr-SC têm acesso a plano de saúde com cobertura nacional e descontos de até 25% pra viver com mais segurança e qualidade.`,
