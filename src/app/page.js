@@ -26,19 +26,21 @@ const outrosBefecios = dataProjects.filter(
   (project) => project.category === "Outros Benefícios"
 );
 
+
 export default function Home() {
 
   const comunidadeId = 20;
   const empresaId = undefined;
   const { data, isLoading, error } = useParceiros(comunidadeId, empresaId);
 
-  console.log("data recebida:", data);
 
   return (
     <>
       <SectionHero />
       <SectionAbout />
+      <div className="mb-20">
       <SectionNumbers />
+      </div>
       <SectionGalleryProjects
         sectionName={"Mercado de Trabalho"}
         dataProjects={mercadoDeTrablaho}
@@ -59,7 +61,9 @@ export default function Home() {
         sectionName={"Outros Benefícios"}
         dataProjects={outrosBefecios}
       />
+      <div className="mb-20  "> 
       <SectionTestemonial />
+      </div>
       <SectionNews />
     </>
   );

@@ -7,7 +7,7 @@ import Text_display_3 from "../../components/text/text-display-3";
 export default function Section_numbers() {
     return (
         <section
-            className="py-20 flex flex-col items-center justify-center bg-cover bg-center text-green-900"
+            className="py-20 flex flex-col items-center justify-center bg-cover bg-center text-green-900 h-[240px]"
             style={{
                 backgroundImage: "url('/banners/bg-number.png')",
             }}

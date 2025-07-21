@@ -17,10 +17,10 @@ export default function Number_count({ number, before_number, after_number, titl
   return (
     <InView>
       {({ inView, ref }) => (
-        <div ref={ref} className="text-center">
-          {inView && <p className="font-bold mb-2 text-4xl">{before_number}{animate ? <CountUp prefix={before_number} end={number} suffix={after_number} duration={1} formattingFn={formatNumber} /> : number}{after_number}</p>}
+        <div ref={ref} className="text-center text-textDarkGreen text-5xl">
+          {inView && <p className="font-bold mb-2 text-textDarkGreen text-5xl">{before_number}{animate ? <CountUp prefix={before_number} end={number} suffix={after_number} duration={1} formattingFn={formatNumber} /> : number}{after_number}</p>}
           <div className="flex justify-center items-center gap-2 relative">
-            <Text_body className="text-center w-52">{title}</Text_body>
+            <Text_body className="text-center w-52 text-base font-medium">{title}</Text_body>
             {description &&
               <div className="group cursor-pointer">
                 <div className="hidden group-hover:block group-hover:animate-fade-up group-hover:animate-duration-300 absolute w-52 h-auto -top-16 left-0 p-2 bg-white transition-all rounded-md border shadow-md">

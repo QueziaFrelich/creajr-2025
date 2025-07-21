@@ -20,7 +20,6 @@ export default function Section_showcase() {
     const comunidadeId = 23; //hml28
     const funcaoPaiId = 6;
     const { data, isLoading, error } = useMembrosComunidade(comunidadeId, funcaoPaiId);
-    console.log("data recebida:", data);
 
     useEffect(() => {
         if (!data || !Array.isArray(data)) {

@@ -54,7 +54,7 @@ export default function CardProject({
   return (
     <>
       {/* Card section */}
-      <div className="max-w-96 min-h-44 p-2 hover:pb-5 text-creajr-blue-500 dark:text-white bg-creajr-blue-100  dark:bg-creajr-blue-900 dark:hover:bg-creajr-blue-600 rounded-xl space-y-3 group/card transition-all duration-500 ease-in-out hover:opacity-100">
+      <div className="max-w-96 min-h-44 p-2 hover:pb-5  dark:text-white bg-bgBlue  dark:bg-creajr-blue-900 dark:hover:bg-creajr-blue-600 rounded-xl space-y-3 group/card transition-all duration-500 ease-in-out hover:opacity-100">
         <div
           style={{ backgroundImage: `url('${image}')` }}
           className="h-24 w-full bg-cover bg-center rounded-t-md"
