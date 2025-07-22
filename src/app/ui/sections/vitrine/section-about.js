@@ -4,10 +4,10 @@ import Text_head_2 from "../../components/text/text-head-2";
 
 export default function tSectionVitrineAcademica() {
   return (
-    <Container className="pb-10">
-      <section className="p-5 md:p-10 rounded-xl item-start">
-        <div className="max-w-3xl space-y-4">
-          <Text_head_2 className="font-bold text-creajr-pink-500">
+    <Container className="">
+      <section className="mt-20 rounded-xl item-start">
+        <div className="max-w-3xl space-y-4 text-textDarkBlue">
+          <Text_head_2 className="font-bold text-textGreen mb-5 text-3xl">
             Vitrine Acadêmica
           </Text_head_2>
 

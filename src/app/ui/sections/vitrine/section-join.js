@@ -17,7 +17,7 @@ export default function SectionJoin() {
       Faça o cadastro na ferramenta Linquei e participe da comunidade de Startups parceiras do CREA-SC!
     </p>
 
-    <button className="mt-4 px-5 py-2 border border-blue-900 text-blue-900 rounded-md font-medium hover:bg-blue-200 transition-all">
+    <button className="mt-4 px-5 py-2 border bg-[#FEFEFE] border-blue-900 text-blue-900 rounded-md font-medium hover:bg-blue-200 transition-all">
       Quero fazer parte!
     </button>
   </div>

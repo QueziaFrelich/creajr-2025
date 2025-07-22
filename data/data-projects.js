@@ -90,6 +90,19 @@ export const dataProjects = [
   },
 
   // Desenvolvimento Profissional
+   {
+    name: "Vitrine Acadêmica",
+    category: "Desenvolvimento Profissional",
+    image: "/projects/vitrine-academica.png",
+    summary:
+      "Conheça os Times de Competição e Startups jr. do programa CREA jr-SC.",
+    button: {
+      type: "link",
+      text: "Ver mais",
+      href: "/vitrine",
+    },
+    modal: null,
+  },
   {
     name: "Talks Profissionais",
     category: "Desenvolvimento Profissional",
@@ -142,19 +155,7 @@ export const dataProjects = [
     },
     modal: null,
   },
-  {
-    name: "Vitrine Acadêmica",
-    category: "Desenvolvimento Profissional",
-    image: "/projects/vitrine-academica.png",
-    summary:
-      "Conheça os Times de Competição e Startups jr. do programa CREA jr-SC.",
-    button: {
-      type: null,
-      text: "",
-      href: "",
-    },
-    modal: null,
-  },
+ 
 
   // Formação de Empreendedores
   {

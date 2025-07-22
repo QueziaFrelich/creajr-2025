@@ -82,13 +82,14 @@ export default function Section_showcase() {
     return (
         <section className="py-20 flex flex-col items-center justify-center" id="feiratecnologica">
             <Container className="flex flex-col gap-10">
-                <div>
-                    <Text_head_2 className="font-bold mb-5">Feira tecnológica</Text_head_2>
-                </div>
-
-                {/* Filtros */}
+               
+              <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-2 ">
+                    <div className="h-6 bg-textDarkGreen rounded w-[5px]"></div>
+                    <Text_head_2 className="font-bold  text-textDarkBlue flex items-center  h-full">Vitrine Acadêmica</Text_head_2>
+                  </div>
                 <div className="flex flex-col md:flex-row gap-5 justify-between items-center">
-                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-lg w-full md:w-96">
+                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-3xl w-full md:w-1/2">
                         <MagnifyingGlassIcon className="size-5" />
                         <input
                             type="text"
@@ -99,7 +100,7 @@ export default function Section_showcase() {
                         />
                     </div>
 
-                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-lg w-full md:w-min">
+                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-3xl w-full md:w-min">
                         <select
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
@@ -114,7 +115,7 @@ export default function Section_showcase() {
                         </select>
                     </div>
                 </div>
-
+             </div>
                 {/* Grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                     {filteredResults.map((empresa, index) => {
@@ -154,7 +155,7 @@ export default function Section_showcase() {
 
                                 {/* Expandido */}
                                 {isOpen && (
-                                    <div className="p-5 flex-1 flex flex-col justify-between gap-3 w-full">
+                                    <div className="p-5 flex-1 flex flex-col justify-between gap-3 w-full text-textDarkBlue">
                                         {/* Imagem no mobile */}
                                         <div className="flex items-center gap-5">
                                             <img
@@ -164,7 +165,7 @@ export default function Section_showcase() {
                                             />
                                             <div>
                                                 <Text_head_3 className="font-bold">{empresa.NomeDaEmpresa}</Text_head_3>
-                                                <p className={`mt-1 text-xs font-medium px-2 py-1 rounded-full w-fit ${getColorClassForTag(empresa.Tag)}`}>
+                                                <p className={`mt-1 mb-2 text-xs font-medium px-2 py-1 rounded-full w-fit ${getColorClassForTag(empresa.Tag)} text-white`}>
                                                     {empresa.Tag}
                                                 </p>
                                                 {empresa.Localizacao && (
