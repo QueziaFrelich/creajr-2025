@@ -78,13 +78,13 @@ export default function Section_showcase() {
     return (
         <section className="py-20 flex flex-col items-center justify-center" id="feiratecnologica">
             <Container className="flex flex-col gap-10">
-                <div>
-                    <Text_head_2 className="font-bold mb-5">Feira tecnológica</Text_head_2>
+                <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2 ">
+                    <div className="h-6 bg-textDarkGreen rounded w-[5px]"></div>
+                    <Text_head_2 className="font-bold  text-textDarkBlue flex items-center  h-full">Benefícios</Text_head_2>
                 </div>
-
-                {/* Filtros */}
                 <div className="flex flex-col md:flex-row gap-5 justify-between items-center">
-                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-lg w-full md:w-96">
+                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-3xl w-full md:w-1/2">
                         <MagnifyingGlassIcon className="size-5" />
                         <input
                             type="text"
@@ -95,7 +95,7 @@ export default function Section_showcase() {
                         />
                     </div>
 
-                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-lg w-full md:w-min">
+                    <div className="flex items-center gap-2 p-3 bg-violet-crea-400/10 border border-violet-crea-400 rounded-3xl w-full md:w-min">
                         <select
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
@@ -110,6 +110,7 @@ export default function Section_showcase() {
                         </select>
                     </div>
                 </div>
+                 </div>
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">

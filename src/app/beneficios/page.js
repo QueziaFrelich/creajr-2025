@@ -8,7 +8,7 @@ export default function Beneficios() {
     <>
       <SectionAbout />
       <SectionShowcase />
-      <SectionJoin />
+      {/* <SectionJoin /> */}
     </>
   );
 }
