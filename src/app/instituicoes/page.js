@@ -1,3 +1,5 @@
+"use client";
+
 import SectionBanner from "../ui/sections/instituicoes/section-banner";
 import SectionCourseBenefits from "../ui/sections/instituicoes/section-course-benefits";
 import SectionPartnership from "../ui/sections/instituicoes/section-partnership";

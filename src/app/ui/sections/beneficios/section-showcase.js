@@ -1,4 +1,5 @@
 'use client'
+
 import { useState, useEffect } from "react";
 import Container from "../../components/container/container";
 import Text_head_2 from "../../components/text/text-head-2";

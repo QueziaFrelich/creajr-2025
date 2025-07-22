@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CardVideo from "../../components/cards/card-video";
 import testimonials from "../../../../../data/data-testemonials"

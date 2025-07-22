@@ -1,3 +1,4 @@
+"use client";
 import Container from "../../components/container/container";
 import Text_body_base from "../../components/text/text-body-base";
 import Text_head_2 from "../../components/text/text-head-2";

@@ -1,3 +1,5 @@
+"use client"
+
 import axios from 'axios'
 
 export const login = async () => {
@@ -11,6 +13,8 @@ export const login = async () => {
   })
 
   const { access_token } = response.data
-  localStorage.setItem("access_token", access_token)
+  if (typeof window !== "undefined") {
+    localStorage.setItem("access_token", access_token);
+  }
   return access_token
 }

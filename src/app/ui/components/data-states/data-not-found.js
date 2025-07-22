@@ -1,3 +1,4 @@
+"use client";
 import Text_head_4 from "../text/text-head-4";
 
 export default function DataNotFound({}) {

@@ -1,3 +1,4 @@
+"use client";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Container from "../../components/container/container";
 import Text_body_base from "../../components/text/text-body-base";

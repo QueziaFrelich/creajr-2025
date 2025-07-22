@@ -1,3 +1,4 @@
+"use client";
 import Text_body_base from "../text/text-body-base";
 
 export default function TagBase({ children, className }) {
