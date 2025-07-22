@@ -10,7 +10,7 @@ import { useCategorias } from "@/app/hooks/useCategorias";
 
 
 
-export default function Section_showcase() {
+export default function SectionShowcase() {
     
     const [openCard, setOpenCard] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
